@@ -1,0 +1,93 @@
+/* Sección de servicios */
+.services {
+    background: linear-gradient(135deg, rgba(240, 249, 244, 0.9), rgba(255, 255, 255, 0.7)), url('ruta/a/tu/fondo.jpg') no-repeat center center/cover;
+    padding: 60px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+    }
+    
+    .services h2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #004d26;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #004d26;
+    padding-bottom: 10px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+    
+    .service {
+    flex-basis: calc(25% - 20px);
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    }
+    
+    .service-image {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    }
+    
+    .service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+    }
+    
+    .service-image img:hover {
+    transform: scale(1.1);
+    }
+    
+    .service h3 {
+    margin: 10px 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #004d26;
+    text-shadow: 0 2px 4px rgba(40, 167, 69, 0.6);
+    }
+    
+    .service p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    text-align: justify;
+    max-height: 120px;
+    overflow-y: auto;
+    }
+    
+    /* Estilos al pasar el cursor */
+    .service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    }
+    
+    @media (max-width: 768px) {
+    .service {
+    flex-basis: calc(45% - 20px);
+    }
+    }
+    
+    @media (max-width: 480px) {
+    .service {
+    flex-basis: 100%;
+    }
+    }

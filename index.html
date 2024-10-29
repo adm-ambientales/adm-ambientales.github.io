@@ -1,0 +1,961 @@
+<!-- Inicio de la página web de la razón social de D.D.M -->
+<!-- Desarrollado por: Ángel Samuel Reséndiz González -->
+<!-- D.D.M -->
+<!-- Administradores Ambientales Destrucción Fiscal (Razón social) -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administradores Ambientales - Destrucciones Fiscales</title>
+     <!-- POSICIONAMIENTO SEO -->
+    <meta name="keywords" content="recoleccion,residuos,reciclado,desperdicios,administradores,destrucion fiscal,medio ambiente">
+    <meta name="description" content="Adminitradores Ambientales Destruccion Fiscal somos una empresa dedicada a las DESTRUCCIONES FISCALES, RECICLADO DE DESPERDICIOS, SERVICIO INTEGRAL DE RECOLECCIÓN DE RESIDUOS y al cuidado del medio ambiente">
+
+    <!-- CODIGO CSS -->
+    <link rel="stylesheet" href="./files/mainResponsive.css">
+    <link rel="stylesheet" type="text/css" href="styles/index-inicio.css">
+    <link rel="stylesheet" href="styles/index-inicio-obj.css">
+    <link rel="stylesheet" href="styles/index-inicio-serv.css">
+    <link rel="stylesheet" href="styles/index-inicio-footer.css">
+    <link rel="shortcut icon" href="./imgs/favicon.jpeg" type="image/x-icon">
+
+    <!-- ESTILOS DE LETRA -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
+
+    <!-- Barra de WhatsApp -->
+    <div class="whatsapp-bar" onclick="window.open('https://wa.me/5571902327/?text=%C2%A1Hola%20DDM!%20Me%20gustar%C3%ADa%20cotizar.', '_blank')">
+        <i class="fab fa-whatsapp whatsapp-icon"></i> <!-- Ícono de WhatsApp -->
+        Contáctanos
+    </div>
+
+
+    
+    <!-- Página de carga (Loading Page) -->
+    <div id="loading-page">
+        <div class="loading-leaf"></div>
+        <div class="loading-circle"></div>
+        <p id="loading-message">Seguiremos cargando en segundo plano...</p>
+    </div>
+
+<!-- Barra de Navegación -->
+<header class="navbar" id="navbar">
+    <style>
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e6f7e6;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* Barra de navegación */
+.navbar {
+    background: #8DB600;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: background 1.5s;
+}
+
+.navbar.sticky {
+    background: rgba(141, 182, 0, 0.9);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: transparent;
+    border: 2px solid transparent;
+}
+
+.nav-links ul li a:hover {
+    background-color: #28a745;
+    color: #a3ffb8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links ul li a i {
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+/* Botón hamburguesa */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+/* Ajuste en dispositivos móviles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #8DB600;
+        padding: 10px 0;
+        align-items: center;
+        z-index: 999;
+        transition: all 0.3s ease;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-links ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links ul li a {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 14px;
+    }
+}
+
+/* Animación del menú hamburguesa */
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Ajuste para pantallas medianas */
+@media (min-width: 768px) {
+    .navbar-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-links ul {
+        gap: 2rem;
+    }
+
+    .nav-links ul li a {
+        padding: 8px 20px;
+        font-size: 16px;
+    }
+}
+
+
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.getElementById("navbar");
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    // Alternar el menú en móviles
+    hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        hamburger.classList.toggle("active");
+    });
+});
+
+    </script>
+    <div class="navbar-container">
+        <div class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="#"><i class="fas fa-home"></i>Inicio</a></li>
+                <li><a href="#company-curriculum"><i class="fas fa-users"></i>Nosotros</a></li>
+                <li><a href="#services"><i class="fas fa-cogs"></i>Servicios</a></li>
+                <li><a href="#footer"><i class="fas fa-envelope"></i>Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+    <!-- Sección de presentación -->
+    <section class="hero">
+        <div class="hero-content">
+            
+            <h1>Admnistradores ambientales</h1>
+            <h1>Destrucciones fiscales</h1>
+            <button class="hero__button"  id="pdf-button">CONOCENOS</button>
+            <script>
+    document.getElementById("pdf-button").addEventListener("click", function() {
+        window.open('./SOMOS_DDM.pdf', '_blank'); // Ruta al archivo SOMOS DDM
+    });
+</script>
+
+        </div>
+        
+    </section>
+
+    <hr class="divider">
+
+
+ <!-- Sección del Currículum de la Empresa -->
+<section class="company-curriculum" id="company-curriculum">
+    <style>
+        
+        </style>
+    <div class="cv-header">
+        <h2>🌱 Objetivos de la Empresa:</h2>
+    </div>
+
+    <div class="cv-container">
+        <div class="cv-card">
+            <h3>🧘‍♀️ Nuestra Filosofía</h3>
+            <p>Nuestra familia está comprometida a fomentar los valores que nos permiten crecer en nuestra política de mejora continua, filosofía que ha llevado a Administradores Ambientales a generar conciencia y responsabilidad en los ámbitos social, laboral y ambiental.</p>
+        </div>
+        <div class="cv-card">
+            <h3>🌟 Visión</h3>
+            <p>Convertirnos en una gran solución integral en materia de manejo de residuos para nuestros clientes, respaldado de un servicio a la medida y con proyección de mejora continua, coadyuvando a tener un planeta más próspero.</p>
+        </div>
+        <div class="cv-card">
+            <h3>🌍 Misión</h3>
+            <p>Contribuir al cuidado del medio ambiente a través de una recolección ordenada, destrucción adecuada y reciclaje responsable de los residuos que restan espacios en nuestro día a día; fortalecemos el aprovechar y reutilizar, gestionando un servicio a nuestros clientes de primera clase.</p>
+        </div>
+        <div class="cv-card">
+            <h3>💚 Valores</h3>
+            <ul>
+                <li>COMPROMISO</li>
+                <li>LEALTAD</li>
+                <li>RESPETO</li>
+                <li>SOLIDARIDAD</li>
+                <li>PASIÓN</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+
+ <hr class="divider">
+
+  <!-- HTML de servicios -->
+<section class="services" id="services">
+    <style>
+/* General styles for the services section */
+.services {
+    background-color: #f9f9f9; /* Color de fondo claro */
+    padding: 40px 20px;
+    border-radius: 10px;
+    font-family: 'Playfair Display', serif; /* Fuente elegante */
+}
+
+/* Heading styles */
+h2 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #4CAF50; /* Verde elegante */
+    margin-bottom: 30px;
+}
+
+/* Individual service styles */
+.service {
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc; /* Borde suave */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* Fondo blanco para cada servicio */
+    transition: transform 0.2s;
+    max-width: 800px; /* Ancho máximo para cada servicio */
+}
+
+.service:hover {
+    transform: scale(1.02); /* Efecto de aumento al pasar el ratón */
+}
+
+/* Image styles */
+.service-image img {
+    width: 100%; /* Adaptar la imagen al contenedor */
+    height: auto; /* Mantener la proporción de la imagen */
+    border-radius: 5px; /* Bordes redondeados para las imágenes */
+    object-fit: cover; /* Asegurarse de que la imagen cubra el contenedor */
+}
+
+/* Heading styles for services */
+h3 {
+    font-size: 1.8em;
+    color: #2e7d32; /* Verde oscuro */
+    margin-top: 15px; /* Espacio arriba de los títulos */
+}
+
+/* Paragraph styles */
+p {
+    font-size: 1.1em; /* Tamaño de fuente más grande para mejor legibilidad */
+    color: #333; /* Color de texto */
+    line-height: 1.6; /* Espaciado entre líneas */
+    margin-bottom: 15px; /* Espacio inferior */
+}
+
+/* List styles */
+ul {
+    list-style-type: square; /* Estilo de lista */
+    padding-left: 20px; /* Sangría para listas */
+    margin-bottom: 15px; /* Espacio inferior */
+}
+
+/* Button styles */
+.eco-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    color: white;
+    background-color: #4CAF50; /* Color del botón */
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+}
+
+.eco-button:hover {
+    background-color: #45a049; /* Color del botón al pasar el ratón */
+}
+
+.service-image img {
+    width: 100%; /* Adaptar la imagen al ancho del contenedor */
+    height: auto; /* Mantener la proporción de la imagen */
+    border-radius: 5px; /* Bordes redondeados para las imágenes */
+    object-fit: cover; /* Asegurarse de que la imagen cubra el contenedor */
+    max-height: 300px; /* Ajusta la altura máxima según tus necesidades */
+}
+
+    </style>
+    <h2>Nuestros Servicios 🌿</h2>
+    
+    <div class="service">
+        <div class="service-image">
+            <img src="./imgs/excavadora.png" alt="Imagen del servicio 1">
+        </div>
+        <h3>DESTRUCCIONES FISCALES E INDUSTRIALES 🏭</h3>
+        <p>Consta de la destrucción total de las mercancías y/o productos
+            terminados que ya no pueden salir al mercado por distintos
+            casos.</p>
+        <ul>
+            <li>Caducidad</li>
+            <li>Vencimiento de licencias</li>
+            <li>Excedente de inventario</li>
+            <li>Pérdida de valor</li>
+            <li>Deterioro</li>
+            <li>Incumplimiento de las normas de calidad</li>
+            <li>Cuando se determina que no salgan al mercado, de conformidad con lo establecido en el Sistema de Administración Tributaria (SAT).</li>
+        </ul>
+        <!-- Botón elegante ecológico -->
+        <a href="./services/index_1.html" target="_blank" class="eco-button">Ver más</a>
+    </div>
+    
+    <div class="service">
+        <div class="service-image">
+            <img src="./imgs/recicle.png" alt="Imagen del servicio 2">
+        </div>
+        <h3>RECICLADO DE DESPERDICIO ♻️</h3>
+        <p>Nuestro servicio de reciclado de desperdicios se enfoca en transformar los materiales que ya no necesitas en recursos valiosos. A través de procesos 
+            innovadores y responsables, garantizamos que tus residuos sean gestionados de manera eficiente, reduciendo la huella ambiental y promoviendo un 
+            futuro más verde. Juntos, podemos convertir el desperdicio en oportunidades, impulsando un ciclo de economía circular que beneficia a tu empresa y al planeta.
+            Al elegir nuestro servicio, cumples con:</p>
+        <ul>
+            <li>Las regulaciones ambientales</li>
+            <li>Conservación de los recursos naturales</li>
+            <li>Economía circular verde</li>
+            <li>Reduces tu huella ambiental</li>
+            <li>Gestión eficiente de residuos</li>
+        </ul>
+    </div>
+
+    <div class="service">
+        <div class="service-image">
+            <img src="./imgs/recoleccion.png" alt="Imagen del servicio 3">
+        </div>
+        <h3>SERVICIO INTEGRAL DE RECOLECCIÓN DE RESIDUOS 🗑️</h3>
+        <p>Consta en el retiro de los residuos mediante contenedores.
+            Estos servicios se realizan por medio de contenedores, la
+            recolección consiste en el retiro de sus residuos para su
+            clasificación, antes de ser confinados. Clasificamos en los
+            siguientes rubros:</p>
+        <ul>
+            <li>Recolección industrial: Refiere a los residuos de un 80%
+                inorgánicos y reciclables</li>
+            <li>Recolección Comercial / alimenticia: refiere a los
+                establecimientos o industrias de producción de alimentos</li>
+            <li>Recolección de Manejo Especial: son los residuos que
+                generan las industrias como: llantas, lodos, grasas, lodos
+                tratados, etc.</li>
+            <li>Recolección de RP: Refiere a residuos peligrosos,
+                contamos en el servicio de recolección, transporte, acopio
+                y destino final.</li>
+        </ul>
+    </div>
+
+
+    <style>
+        .card {
+      width: 400px;
+      height: 300px;
+      background: #243137;
+      position: relative;
+      display: grid;
+      place-content: center;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .card.hover {
+    border-radius: 0;
+    transform: scale(1.1);
+}
+
+.card.hover .logo {
+    width: 150px;
+    animation: opacity 1s ease-in-out;
+}
+
+.card.hover .border {
+    inset: 15px;
+    opacity: 1;
+    transform: rotate(0);
+}
+
+.card.hover .bottom-text {
+    letter-spacing: 3px;
+    opacity: 1;
+    transform: translateX(-50%);
+}
+
+.card.hover .content .logo-bottom-text {
+    opacity: 1;
+    letter-spacing: 9.5px;
+}
+
+.card.hover .trail {
+    animation: trail 1s ease-in-out;
+}
+
+    
+    #logo-main, #logo-second {
+      height: 1000%;
+    }
+    
+    #logo-main {
+      fill: #bd9f67;
+    }
+    
+    #logo-second {
+      padding-bottom: 100px;
+      fill: none;
+      stroke: #bd9f67;
+      stroke-width: 1px;
+    }
+    
+    .border {
+      position: absolute;
+      inset: 0px;
+      border: 2px solid #bd9f67;
+      opacity: 0;
+      transform: rotate(10deg);
+      transition: all 0.5s ease-in-out;
+    }
+    
+    .bottom-text {
+      position: absolute;
+      left: 50%;
+      bottom: 13px;
+      transform: translateX(-50%);
+      font-size: 20px;
+      text-transform: uppercase;
+      padding: 0px 5px 0px 8px;
+      color: #bd9f67;
+      background: #243137;
+      opacity: 0;
+      letter-spacing: 5px;
+      transition: all 0.5s ease-in-out;
+    }
+    
+    .content {
+      transition: all 0.5s ease-in-out;
+    }
+    
+    .content .logo {
+      height: 60px;
+      position: relative;
+      width: 60px;
+      overflow: hidden;
+      transition: all 1s ease-in-out;
+    }
+    
+    .content .logo .logo1 {
+      height: 33px;
+      position: absolute;
+      left: 0;
+    }
+    
+    .content .logo .logo2 {
+      height: 33px;
+      position: absolute;
+      left: 33px;
+    }
+    
+    .content .logo .trail {
+      position: absolute;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+    }
+    
+    .content .logo-bottom-text {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 30px;
+      color: #bd9f67;
+      padding-left: 8px;
+      font-size: 11px;
+      opacity: 0;
+      letter-spacing: none;
+      transition: all 0.5s ease-in-out 0.5s;
+    }
+    
+    .card:hover {
+      border-radius: 0;
+      transform: scale(1.1);
+    }
+    
+    .card:hover .logo {
+      width: 134px;
+      animation: opacity 1s ease-in-out;
+    }
+    
+    .card:hover .border {
+      inset: 15px;
+      opacity: 1;
+      transform: rotate(0);
+    }
+    
+    .card:hover .bottom-text {
+      letter-spacing: 3px;
+      opacity: 1;
+      transform: translateX(-50%);
+    }
+    
+    .card:hover .content .logo-bottom-text {
+      opacity: 1;
+      letter-spacing: 9.5px;
+    }
+    
+    .card:hover .trail {
+      animation: trail 1s ease-in-out;
+    }
+    
+    @keyframes opacity {
+      0% {
+        border-right: 1px solid transparent;
+      }
+    
+      10% {
+        border-right: 1px solid #bd9f67;
+      }
+    
+      80% {
+        border-right: 1px solid #bd9f67;
+      }
+    
+      100% {
+        border-right: 1px solid transparent;
+      }
+    }
+    
+    @keyframes trail {
+      0% {
+        background: linear-gradient(90deg, rgba(189, 159, 103, 0) 90%, rgb(189, 159, 103) 100%);
+        opacity: 0;
+      }
+    
+      30% {
+        background: linear-gradient(90deg, rgba(189, 159, 103, 0) 70%, rgb(189, 159, 103) 100%);
+        opacity: 1;
+      }
+    
+      70% {
+        background: linear-gradient(90deg, rgba(189, 159, 103, 0) 70%, rgb(189, 159, 103) 100%);
+        opacity: 1;
+      }
+    
+      95% {
+        background: linear-gradient(90deg, rgba(189, 159, 103, 0) 90%, rgb(189, 159, 103) 100%);
+        opacity: 0;
+      }
+    }
+    </style>
+    
+    <script>
+        window.addEventListener('scroll', function() {
+            const card = document.getElementById('myCard');
+            const cardPosition = card.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+    
+            // Verifica si la tarjeta está en la vista
+            if (cardPosition.top >= 0 && cardPosition.bottom <= windowHeight) {
+                card.classList.add('hover'); // Agrega la clase hover
+            } else {
+                card.classList.remove('hover'); // Remueve la clase hover si no está visible
+            }
+        });
+    </script>
+    
+
+    <div class="card" id="myCard">
+        <div class="border"></div>
+        <div class="content">
+          <div class="logo">
+            <div class="logo1">
+                <img src="./imgs/txt.png" alt="Imagen A-A" style="max-width: 100%; height: auto; object-fit: contain;">
+
+            </div>
+        
+            <span class="trail"></span>
+          </div>
+          <br></br>
+          <span class="logo-bottom-text">Administradores Ambientales</span>
+        </div>
+        <span class="bottom-text">Destrucciones Fiscales</span>
+        
+      </div>
+     
+ 
+</section>
+<br></br>
+
+<section class="center-section">
+    <style>
+/* Estilos generales para la sección */
+.center-section {
+    display: flex; /* Utiliza Flexbox para centrar el contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    background-color: #f0f8ff; /* Color de fondo suave */
+    padding: 20px; /* Espacio interno */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Estilos para el botón */
+.eco-button {
+    display: inline-block; /* Comportamiento de bloque en línea */
+    padding: 15px 30px; /* Espaciado interno del botón */
+    background-color: #28a745; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    text-decoration: none; /* Quita el subrayado */
+    border: none; /* Sin bordes */
+    border-radius: 25px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de la fuente */
+    font-weight: bold; /* Negrita */
+    text-align: center; /* Centra el texto */
+    transition: background-color 0.3s, transform 0.3s; /* Efecto de transición */
+}
+
+/* Efecto hover para el botón */
+.eco-button:hover {
+    background-color: #218838; /* Cambia el color de fondo en hover */
+    transform: translateY(-2px); /* Efecto de elevación en hover */
+}
+
+/* Efecto de foco para accesibilidad */
+.eco-button:focus {
+    outline: none; /* Quita el contorno por defecto */
+    box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.5); /* Sombra para el foco */
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    .eco-button {
+        padding: 12px 24px; /* Reduce el espaciado en pantallas más pequeñas */
+        font-size: 14px; /* Reduce el tamaño de la fuente en pantallas más pequeñas */
+    }
+}
+
+    </style>
+    <a href="./services/ventajas.html" target="_blank" class="eco-button">Ventajas y detalles de los servicios</a>
+</section>
+
+
+    <section class="ubicacion">
+        <style>
+            .ubicacion {
+    background-color: #eafaf2; /* Color de fondo más claro y suave */
+    padding: 60px 20px; /* Espaciado generoso */
+    text-align: center; /* Centrar texto */
+    border-top: 6px solid #28a745; /* Línea superior verde más gruesa */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada para profundidad */
+    border-radius: 10px; /* Bordes redondeados */
+    margin: 40px 0; /* Margen superior e inferior */
+}
+
+.ubicacion-header {
+    margin-bottom: 30px; /* Espacio inferior para el encabezado */
+}
+
+.ubicacion-header h2 {
+    font-size: 38px; /* Tamaño de fuente mayor */
+    font-weight: 700; /* Peso de fuente fuerte */
+    color: #007a33; /* Color verde más oscuro para mayor elegancia */
+    text-transform: uppercase; /* Convertir a mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras para un aspecto más refinado */
+    border-bottom: 2px solid #28a745; /* Línea inferior verde */
+    display: inline-block; /* Para alinear con el borde */
+    padding-bottom: 10px; /* Espaciado entre el texto y la línea */
+}
+
+.map-container {
+    max-width: 1200px; /* Ancho máximo del contenedor del mapa */
+    margin: 0 auto; /* Centrar el contenedor */
+    border: 5px solid #28a745; /* Borde verde alrededor del mapa */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Ocultar desbordamiento */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25); /* Sombra más pronunciada */
+    transition: transform 0.3s ease; /* Transición suave al pasar el ratón */
+}
+
+.map-container:hover {
+    transform: scale(1.02); /* Efecto de zoom al pasar el ratón */
+}
+
+iframe {
+    border: none; /* Eliminar bordes del iframe */
+}
+
+        </style>
+        <div class="ubicacion-header">
+            <h2>NUESTRAS INSTALACIONES</h2>
+<br></br>
+            <h1>
+
+                BODEGA: C. Sin Nombre S.N. Bo Santo Tomás Teoloyucan, México C.P. 54783</h1>
+        </div>
+      <!--   <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.2647710709485!2d-99.1616947!3d19.7717054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa15ba5ed0652304e!2sDestrucciones%20Din%C3%A1micas%20M%C3%A9xico%20-%20DDM!5e0!3m2!1ses!2smx!4v1697789883730!5m2!1ses!2smx"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>  --> 
+    </section>
+    
+    <hr class="divider">
+
+
+    <footer class="footer" id="footer" style="background-color: #8DB600; padding: 20px; text-align: center;">
+        <p style="font-size: 18px; color: #0f0f0f; font-weight: bold;">&copy; 2024 ᴀᴅᴍɪɴɪꜱᴛʀᴀᴅᴏʀᴇꜱ ᴀᴍʙɪᴇɴᴛᴀʟᴇꜱ. ᴛᴏᴅᴏꜱ ʟᴏꜱ ᴅᴇʀᴇᴄʜᴏꜱ ʀᴇꜱᴇʀᴠᴀᴅᴏꜱ.</p>
+        <p style="font-size: 18px; color: #0f0f0f; font-weight: bold;">ꜱɪᴛɪᴏ ᴄɪʙᴇʀᴘʀᴏᴛᴇɢɪᴅᴏ ʏ ᴀꜱᴇɢᴜʀᴀᴅᴏ ᴘᴏʀ ᴅᴍᴄᴀ</p>
+    
+    
+   <br></br>
+   <footer class="footer" style="background-color: #a2ec70; padding: 50px 0; color: #000; font-family: 'Luxia', sans-serif;">
+    
+    <div class="content-container">
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-md-4">
+                <h3 style="font-size: 28px; font-weight: bold; margin-bottom: 30px; color: #000;">𝙎𝙤𝙗𝙧𝙚 𝙚𝙨𝙩𝙖 𝙥𝙖𝙜𝙞𝙣𝙖</h3>
+                <p style="font-size: 18px; line-height: 1.6; color: #000;">𝘈𝘥𝘮𝘪𝘯𝘪𝘴𝘵𝘳𝘢𝘥𝘰𝘳𝘦𝘴 𝘈𝘮𝘣𝘪𝘦𝘯𝘵𝘢𝘭𝘦𝘴 𝘦𝘴 𝘶𝘯𝘢 𝘳𝘢𝘻𝘰𝘯 𝘴𝘰𝘤𝘪𝘢𝘭 𝘺 𝘶𝘯𝘢 𝘦𝘮𝘱𝘳𝘦𝘴𝘢 100% 𝘮𝘦𝘹𝘪𝘤𝘢𝘯𝘢 𝘤𝘰𝘯 +10 𝘢ñ𝘰𝘴 𝘥𝘦 𝘦𝘹𝘱𝘦𝘳𝘪𝘦𝘯𝘤𝘪𝘢 𝘦𝘯 𝘦𝘭 𝘮𝘦𝘳𝘤𝘢𝘥𝘰 𝘪𝘯𝘥𝘶𝘴𝘵𝘳𝘪𝘢𝘭 𝘺 𝘥𝘦 𝘴𝘦𝘳𝘷𝘪𝘤𝘪𝘰𝘴. 𝘉𝘶𝘴𝘤𝘢𝘮𝘰𝘴 𝘥𝘢𝘳 𝘴𝘪𝘦𝘮𝘱𝘳𝘦 𝘢 𝘯𝘶𝘦𝘴𝘵𝘳𝘰𝘴 𝘤𝘭𝘪𝘦𝘯𝘵𝘦𝘴 𝘴𝘰𝘭𝘶𝘤𝘪𝘰𝘯𝘦𝘴 𝘪𝘯𝘵𝘦𝘨𝘳𝘢𝘭𝘦𝘴 𝘲𝘶𝘦 𝘰𝘣𝘦𝘥𝘦𝘻𝘤𝘢𝘯 𝘢 𝘴𝘶𝘴 𝘯𝘦𝘤𝘦𝘴𝘪𝘥𝘢𝘥𝘦𝘴 𝘺 𝘰𝘧𝘳𝘦𝘤𝘦𝘮𝘰𝘴 𝘴𝘦𝘳𝘷𝘪𝘤𝘪𝘰𝘴 𝘲𝘶𝘦 𝘪𝘮𝘱𝘢𝘤𝘵𝘢𝘯 𝘦𝘯 𝘭𝘢 𝘮𝘦𝘫𝘰𝘳𝘢 𝘢𝘮𝘣𝘪𝘦𝘯𝘵𝘢𝘭. 𝘛𝘳𝘢𝘣𝘢𝘫𝘢𝘮𝘰𝘴 𝘥𝘪𝘢 𝘢 𝘥𝘪𝘢 𝘱𝘢𝘳𝘢 𝘢𝘭𝘤𝘢𝘯𝘻𝘢𝘳 𝘭𝘢 𝘴𝘶𝘴𝘵𝘦𝘯𝘵𝘢𝘣𝘪𝘭𝘪𝘥𝘢𝘥 𝘢𝘮𝘣𝘪𝘦𝘯𝘵𝘢𝘭 𝘺 𝘦𝘤𝘰𝘯𝘰𝘮𝘪𝘤𝘢..</p>
+            </div>
+            <br>
+            <br></br>
+            <div class="col-md-4">
+                <h3 style="font-size: 28px; font-weight: bold; margin-bottom: 30px; color: #000;">𝙉𝙪𝙚𝙨𝙩𝙧𝙖𝙨 𝙧𝙚𝙙𝙚𝙨 𝙨𝙤𝙘𝙞𝙖𝙡𝙚𝙨:</h3>
+                <ul class="social-links" style="list-style: none; padding: 0; margin: 0;">
+                    <li style="display: inline-block; margin-right: 20px;"><a href="https://www.youtube.com/channel/UCozVXOrsxMpr2PQz8smzgAw"><i class="fab fa-youtube" style="color: #ff0000; font-size: 32px;"></i></a></li>
+                    <li style="display: inline-block; margin-right: 20px;"><a href="https://www.facebook.com/people/Ddm-Destrucciones/100084876496877/"><i class="fab fa-facebook" style="color: #3b5998; font-size: 32px;"></i></a></li>
+                    <li style="display: inline-block; margin-right: 20px;"><a href="https://www.instagram.com/ddmdestrucciones/"><i class="fab fa-instagram" style="color: #e4405f; font-size: 32px;"></i></a></li>
+                    <li style="display: inline-block; margin-right: 20px;"><a href="https://www.tiktok.com/@destruccionesddm?_t=8VWFJCYatE6&_r=1"><i class="fab fa-tiktok" style="color: #420505; font-size: 32px;"></i></a></li>
+                </ul>
+      
+            </div>
+            <br>
+            <br></br>
+            <div class="col-md-4">
+                <h3 style="font-size: 28px; font-weight: bold; margin-bottom: 30px; color: #000;">𝘾𝙤𝙣𝙩𝙖𝙘𝙩𝙤</h3>
+                <p style="font-size: 18px; line-height: 1.6; color: #000;">𝘗𝘰𝘳 𝘧𝘢𝘷𝘰𝘳 𝘤𝘰𝘯𝘵𝘢𝘤𝘵𝘦𝘯𝘰𝘴 𝘮𝘦𝘥𝘪𝘢𝘯𝘵𝘦 𝘯𝘶𝘦𝘴𝘵𝘳𝘰 𝘤𝘰𝘳𝘳𝘦𝘰 𝘦𝘭𝘦𝘤𝘵𝘳𝘰𝘯𝘪𝘤𝘰 𝘰𝘧𝘪𝘤𝘪𝘢𝘭: <br><a href="mailto:ventas@administradoresambientales" style="color: #000; text-decoration: underline;">ventas@administradoresambientales</a></p>
+                <p style="font-size: 18px; line-height: 1.6; color: #000;">Teléfono oficina: 55 3486 2081 <br></p>
+                <br></br>
+                <a href="https://adm-ambientales.github.io/" target="_blank">
+                    <img src="./imgs/complete-no_bg.png" alt="Imagen del footer" style="max-width: 100%; height: auto; object-fit: contain;">
+                </a>                               
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .footer {
+        background-color: #d4edda; /* Fondo verde suave */
+        border: 2px solid #8DB600; /* Borde verde */
+        border-radius: 10px; /* Bordes redondeados */
+        box-shadow: 0 0 30px rgba(141, 182, 0, 0.6); /* Sombra alrededor */
+    }
+</style>
+
+
+
+    
+<!-- Footer 
+
+<footer>
+    <div class="footer-content">
+        <style>
+           footer {
+    background-color: #d4edda; /* Color de fondo verde manzana suave */
+    color: #343a40; /* Color del texto oscuro */
+    padding: 40px 20px; /* Espaciado generoso */
+    text-align: center; /* Centrar el texto */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para mayor profundidad */
+}
+
+.footer-content {
+    max-width: 1200px; /* Ancho máximo para el contenido */
+    margin: 0 auto; /* Centrar el contenido */
+}
+
+.footer-content p {
+    margin: 0; /* Eliminar márgenes */
+    font-size: 16px; /* Tamaño de fuente aumentado */
+    font-weight: 600; /* Peso de fuente más fuerte */
+}
+
+.mission-statement {
+    font-size: 14px; /* Tamaño de fuente más pequeño para la misión */
+    font-style: italic; /* Estilo en cursiva */
+    margin: 10px 0; /* Espaciado superior e inferior */
+}
+
+.footer-quote {
+    font-size: 16px; /* Tamaño de fuente para la cita */
+    color: #28a745; /* Color verde para la cita */
+    margin: 15px 0 0; /* Espaciado superior */
+    font-style: italic; /* Estilo en cursiva */
+    border-left: 4px solid #28a745; /* Línea de la izquierda para destacar */
+    padding-left: 15px; /* Espaciado dentro de la cita */
+    display: inline-block; /* Alinear con el resto del contenido */
+}
+
+
+        </style>
+        <p>&copy; 2024 Administradores Ambientales. Todos los derechos reservados.</p>
+        <p class="mission-statement">Comprometidos con la sostenibilidad.</p>
+        <blockquote class="footer-quote">
+            "La tierra no pertenece al hombre; el hombre pertenece a la tierra." - Chief Seattle
+        </blockquote>
+    </div>
+</footer>
+
+-->
+
+    
+     <!-- Script para hacer el navbar sticky y controlar la página de carga -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('sticky');
+            } else {
+                navbar.classList.remove('sticky');
+            }
+        });
+
+        // Mostrar la página de carga y ocultarla cuando todo esté listo
+        window.addEventListener('load', function() {
+            const loadingPage = document.getElementById('loading-page');
+            const loadingMessage = document.getElementById('loading-message');
+
+            // Después de 3 segundos, si la página no ha cargado, muestra el mensaje
+            setTimeout(function() {
+                loadingMessage.style.display = 'block';
+            }, 3000);
+
+            // Simula la carga completa del contenido después de 5 segundos
+            setTimeout(function() {
+                document.body.classList.add('loaded');
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+  

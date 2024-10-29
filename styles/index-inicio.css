@@ -1,0 +1,370 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e6f7e6;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* Media Queries para móviles */
+@media (max-width: 768px) {
+.navbar ul {
+flex-direction: column; /* Cambiar a disposición en columna */
+align-items: center; /* Centrar los elementos */
+}
+
+.navbar ul li {
+margin: 5px 0; /* Espaciado vertical entre elementos */
+}
+
+.navbar ul li a {
+font-size: 16px; /* Mantener un tamaño de texto legible */
+padding: 10px 20px; /* Espaciado alrededor del texto */
+width: 100%; /* Hacer que los enlaces ocupen el ancho completo */
+text-align: center; /* Centrar el texto dentro del enlace */
+}
+
+.navbar ul li a i {
+font-size: 20px; /* Tamaño de íconos */
+}
+}
+
+
+
+
+
+
+
+/* Página de carga (Loading Page) */
+#loading-page {
+position: fixed;
+width: 100vw;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 2000;
+flex-direction: column;
+background-color: #f0f4f5; /* Color de fondo sólido */
+}
+
+.loading-container {
+position: relative; /* Para alinear el círculo y la imagen */
+width: 100px; /* Tamaño del contenedor */
+height: 100px; /* Tamaño del contenedor */
+}
+
+.loading-leaf {
+width: 70px; /* Tamaño de la imagen de la hoja */
+height: 70px; /* Tamaño de la imagen de la hoja */
+background-image: url('./imgs/tu-imagen-de-hoja.png'); /* Cambia esto por tu imagen de hoja */
+background-size: contain; /* Asegúrate de que la imagen se ajuste al contenedor */
+background-repeat: no-repeat;
+background-position: center;
+position: absolute; /* Para centrar dentro del contenedor */
+top: 15px; /* Ajusta según sea necesario para centrar */
+left: 15px; /* Ajusta según sea necesario para centrar */
+z-index: 2; /* Asegúrate de que esté por encima del círculo */
+}
+
+.loading-circle {
+border: 8px solid rgba(0, 77, 38, 0.1);
+border-top: 8px solid #28a745;
+border-radius: 50%;
+width: 100px; /* Tamaño del círculo */
+height: 100px; /* Tamaño del círculo */
+animation: spin 1.5s linear infinite; /* El círculo girará */
+}
+
+@keyframes spin {
+from {
+transform: rotate(0deg);
+}
+to {
+transform: rotate(360deg);
+}
+}
+
+/* Imagen de fondo tenue */
+#loading-page::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 99%;
+height: 99%;
+background-image: url('../imgs/loading_img.jpeg'); 
+background-size: cover; 
+background-position: center; /* Centra la imagen */
+background-repeat: no-repeat; /* No repite la imagen */
+opacity: 0.1; /* Ajusta la opacidad de la imagen de fondo para que sea tenue */
+z-index: 1; /* Asegura que esté detrás del contenido */
+}
+
+#loading-message {
+margin-top: 20px;
+font-size: 20px;
+color: #004d26;
+z-index: 2; 
+}
+
+#loading-message {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #004d26;
+    display: none;
+}
+
+/* Oculta la página de carga cuando termine */
+body.loaded #loading-page {
+    display: none;
+}
+
+
+/* Barra de Navegación */
+.navbar {
+    background: #8DB600;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: background 1.5s;
+}
+
+.navbar.sticky {
+    background: rgba(141, 182, 0, 0.75);
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    list-style: none;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #8DB600;
+    border: 2px solid #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    background-color: #28a745;
+    color: #a3ffb8;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.navbar ul li a i {
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    /* Botón de menú hamburguesa para móviles */
+    .navbar-toggle {
+        display: block;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        margin-right: 20px;
+    }
+
+    .navbar ul {
+        display: none; /* Ocultar el menú en móviles */
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    /* Mostrar el menú cuando esté activo */
+    .navbar.active ul {
+        display: flex;
+    }
+
+    .navbar ul li {
+        width: 100%;
+    }
+
+    .navbar ul li a {
+        font-size: 16px;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+}
+/* Estilos básicos de la barra de navegación */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  /* Ocultar el menú por defecto en móviles */
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+  }
+  
+  /* Estilo de las barras del botón hamburguesa */
+  .hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+  }
+  
+  /* Mostrar el botón hamburguesa en dispositivos móviles */
+  @media (max-width: 768px) {
+    .navbar-container {
+      justify-content: space-between;
+    }
+  
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #8DB600;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  }
+  
+/* Barra de desplazamiento personalizada */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #28a745;
+    border-radius: 20px;
+}
+
+/* Sección de presentación */
+.hero {
+    background: linear-gradient(to top,rgba(5,7,12,0.70) ,rgba(5,7,12,0.50)), url("../imgs/bg_img1.jpeg");
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 77, 38, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.hero button {
+    position: relative; /* Necesario para el efecto de brillo */
+    padding: 12px 36px;
+    background: linear-gradient(135deg, #28a745, #ec380b);
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 25px; /* Bordes más redondeados */
+    overflow: hidden; /* Asegura que el efecto de brillo no sobresalga */
+    transition: color 0.3s, transform 0.3s; /* Transiciones suaves */
+    z-index: 1; /* Asegura que el botón esté por encima del brillo */
+}
+
+.hero button::before {
+    content: '';
+    position: absolute;
+    top: -200%;
+    left: -200%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: all 0.5s; /* Efecto suave para el brillo */
+    border-radius: 50%; /* Hacer el brillo circular */
+    z-index: 0; /* Asegura que el brillo esté detrás del texto */
+}
+
+.hero button:hover::before {
+    top: 0; /* Mueve el brillo hacia el botón */
+    left: 0;
+}
+
+.hero button:hover {
+    color: #e6f7e6; /* Cambia el color del texto al pasar el mouse */
+    transform: translateY(-3px); /* Efecto de elevación al pasar el mouse */
+}
+
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+

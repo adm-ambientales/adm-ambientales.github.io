@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administradores Amb Ambientales, Destrucción Fiscal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <img src="logo.png" alt="Logo de la empresa" class="logo">
+        <h1>Administradores Amb Ambientales, Destrucción Fiscal</h1>
+        <p>Comprometidos con la gestión ambiental y destrucción fiscal segura.</p>
+    </header>
+
+    <section class="banner">
+        <img src="banner-image.jpg" alt="Camión Verde Manzana" class="banner-image">
+    </section>
+
+    <section class="servicios">
+        <h2>Nuestros Servicios</h2>
+        <div class="servicio-item">
+            <img src="fiscal-icon.png" alt="Icono Fiscal">
+            <h3>Destrucción Fiscal</h3>
+            <p>Garantizamos la destrucción segura de documentos y productos, cumpliendo con las normativas vigentes.</p>
+        </div>
+        <div class="servicio-item">
+            <img src="environment-icon.png" alt="Icono Ambiental">
+            <h3>Gestión Ambiental</h3>
+            <p>Implementamos soluciones para la recolección y manejo de residuos de manera eco-responsable.</p>
+        </div>
+    </section>
+
+    <footer class="footer" id="contacto">
+        <h2>Contáctanos</h2>
+        <p>Email: contacto@ambientalesfiscal.com | Tel: +52 123 456 7890</p>
+        <a href="https://wa.me/521234567890" class="btn">WhatsApp</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./files/mainResponsive.css">
+    <link rel="icon" href="../imgs/favicon.jpeg">
+    <title>Servicios - Administradores Ambientales</title>
+    <style>
+        /* Estilos generales */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background: linear-gradient(to right, #e2f0d9, #c7f0d9);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Encabezado */
+        .header {
+            background: #8DB600;
+            color: #ffffff;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.7);
+            margin-bottom: 10px;
+            animation: glowing 1.5s infinite alternate;
+        }
+
+        @keyframes glowing {
+            0% { text-shadow: 0 0 5px #ffffff, 0 0 10px #00b300, 0 0 15px #00b300; }
+            100% { text-shadow: 0 0 10px #ffffff, 0 0 20px #00b300, 0 0 30px #00b300; }
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        /* Introducción */
+        .introduction {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 60px 20px;
+            background-color: #ffffff;
+            gap: 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin: 20px;
+            transition: transform 0.3s;
+        }
+
+        .introduction:hover {
+            transform: translateY(-5px);
+        }
+
+        .intro-text, .intro-image {
+            flex: 1 1 45%;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .intro-text h2 {
+            font-size: 2.4em;
+            color: #004d26;
+            margin-bottom: 10px;
+        }
+
+        .intro-text p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .intro-image img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .intro-image img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Características clave */
+        .key-features {
+            background-color: #f0f9f4;
+            padding: 60px 20px;
+            text-align: center;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .key-features h2 {
+            color: #004d26;
+            font-size: 2.4em;
+            margin-bottom: 20px;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .features-list li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            transition: background 0.3s;
+        }
+
+        .features-list li:hover {
+            background-color: #e6f5e6;
+            color: #007d40;
+            font-weight: bold;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Llamada a la acción */
+        .cta {
+            background: #8DB600;
+            color: #ffffff;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta h2 {
+            font-size: 2.4em;
+            margin-bottom: 20px;
+        }
+
+        .contact-button {
+    padding: 15px 40px;
+    font-size: 1.2em;
+    color: #ffffff; /* Color del texto */
+    background-color: #007d40; /* Color de fondo */
+    border: 2px solid #005a30; /* Borde más oscuro */
+    border-radius: 25px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+.contact-button:hover {
+    background-color: #005a30; /* Color de fondo al pasar el mouse */
+    border-color: #003b20; /* Cambia el color del borde */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+    transform: scale(1.05); /* Aumentar tamaño del botón */
+}
+
+        /* Footer */
+        .footer {
+            background-color: #8DB600;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            position: relative;
+            margin-top: 20px;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado de la página -->
+    <header class="header">
+        <h1>Destrucciones Fiscales e Industriales</h1>
+        <p class="subtitle">Garantizamos el cumplimiento y seguridad en la eliminación de sus productos.</p>
+    </header>
+
+    <!-- Sección de introducción -->
+    <section class="introduction">
+        <div class="intro-text">
+            <h2>Descripción del Servicio</h2>
+            <p>Ofrecemos un servicio especializado en la destrucción fiscal e industrial de productos. Nuestro proceso asegura la eliminación segura, responsable y controlada.</p>
+            <p>Contamos con:</p>
+            <br></br>
+            <ul>
+                <li>Recolección y transporte autorizado</li> 
+                <p>Disposición de nuestras unidades de transporte para residuos: Camiones Frontales, camión torton caja cerrada, unidades Roll Off.</p>
+                <br></br>
+                <li>Destrucción y reciclaje de los subproductos</li>
+                <p>Garantizamos la destrucción y reciclaje o confinamiento de los subproductos generados.</p>
+                <br></br>
+                <li>Entrega de evidencias de la destrucción</li>
+                <p>Proporcionamos evidencias fotográficas de la recepción y destrucción de la mercancía.</p>
+                <br></br>
+                <li>Certificado de destrucción fiscal</li>
+                <p>Ofrecemos certificado que verifica la correcta disposición y destrucción de la mercancía y residuo.</p>
+            </ul>
+        </div>
+        <div class="intro-image">
+            <img src="../imgs/residuos.png" alt="Imagen de Destrucción Fiscal e Industrial">
+        </div>
+    </section>
+
+    <!-- Sección de características clave -->
+    <section class="key-features">
+        <h2>Contamos con la experiencia en la destrucción de los siguientes diferentes tipos de productos.</h2>
+        <ul class="features-list">
+            <li>Caducidad</li>
+            <li>Producto terminado</li>
+            <li>Materia prima grado alimenticio</li>
+            <li>Cosméticos</li>
+            <li>Línea blanca</li>
+            <li>Electrónicos</li>
+            <li>Electrodomésticos</li>
+            <li>Textiles</li>
+            <li>Avíos para la confección</li>
+            <li>Etiquetas plásticas y papel</li>
+            <li>Residuos de fábrica</li>
+        </ul>
+    </section>
+
+<!-- Llamada a la acción -->
+<section class="cta">
+    <h2>¡Contáctanos hoy mismo!</h2>
+    <p>Estamos aquí para ayudarte a eliminar tus productos de manera segura y eficiente.</p>
+    <br></br>
+    <button class="contact-button" onclick="window.location.href='../index.html'">Contactar</button>
+</section>
+
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <p>&copy; 2024 Administradores Ambientales</p>
+        <p>Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

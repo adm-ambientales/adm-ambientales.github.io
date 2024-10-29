@@ -1,0 +1,154 @@
+.cv-header {
+    background: linear-gradient(120deg, #1e7d32, #4caf50, #a7e26d);
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    border: none;
+}
+
+.cv-header h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.cv-header h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 10px auto;
+    border-radius: 3px;
+    opacity: 0.9;
+}
+
+.cv-header p {
+    font-size: 16px;
+    color: #f0f0f0;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+.curriculum-vitae {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 60px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    margin: 40px 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.curriculum-vitae::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.curriculum-vitae h2 {
+    font-size: 32px;
+    color: #030303;
+    margin-bottom: 30px;
+    position: relative;
+    font-weight: 700;
+}
+
+.curriculum-vitae h2::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 4px;
+    background-color: #25aa04;
+    margin: 15px auto;
+    border-radius: 5px;
+}
+
+.cv-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.cv-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    overflow: hidden; /* Evitar el desbordamiento */
+}
+
+.cv-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 6px;
+    background-color: #28a745;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cv-card h3 {
+    font-size: 24px;
+    color: #343a40;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.cv-card p {
+    font-size: 16px;
+    color: #6c757d;
+    line-height: 1.6;
+}
+
+.cv-arrow {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #28a745; /* Color de la flecha */
+    margin: 10px auto; /* Centrar la flecha */
+    transition: transform 0.3s;
+}
+
+/* Efecto al pasar el ratón sobre las tarjetas */
+.cv-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Flecha en la parte inferior de las tarjetas */
+.cv-card::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #28a745; /* Color de la flecha */
+    margin: 20px auto; /* Centrar la flecha */
+}
