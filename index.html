@@ -934,18 +934,35 @@ li::before {
 
     <section class="ubicacion">
         <style>
-            .ubicacion {
-    background-color: #eafaf2; /* Color de fondo más claro y suave */
+  .ubicacion {
+    background: linear-gradient(135deg, #eafaf2 30%, #b2e0d4 100%); /* Gradiente suave de verde claro a más oscuro */
     padding: 60px 20px; /* Espaciado generoso */
     text-align: center; /* Centrar texto */
     border-top: 6px solid #28a745; /* Línea superior verde más gruesa */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada para profundidad */
     border-radius: 10px; /* Bordes redondeados */
     margin: 40px 0; /* Margen superior e inferior */
+    position: relative; /* Para posicionar el pseudo-elemento */
+    overflow: hidden; /* Para ocultar el pseudo-elemento si es necesario */
+}
+
+/* Añadir un patrón sutil de fondo */
+.ubicacion::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../imgs/patron-sutil.png'); /* Cambia esto a la ruta de tu imagen de patrón */
+    opacity: 0.1; /* Opacidad para que el patrón no sea demasiado intrusivo */
+    z-index: 1; /* Asegurarte de que está detrás del contenido */
 }
 
 .ubicacion-header {
     margin-bottom: 30px; /* Espacio inferior para el encabezado */
+    position: relative; /* Para mantener la posición del texto sobre el patrón */
+    z-index: 2; /* Asegurarte de que el texto esté por encima del patrón */
 }
 
 .ubicacion-header h2 {
@@ -976,6 +993,7 @@ li::before {
 iframe {
     border: none; /* Eliminar bordes del iframe */
 }
+
 
         </style>
         <div class="ubicacion-header">
