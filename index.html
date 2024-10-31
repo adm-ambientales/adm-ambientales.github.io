@@ -934,19 +934,43 @@ li::before {
 
     <section class="ubicacion">
         <style>
-  .ubicacion {
-    background: linear-gradient(135deg, #eafaf2 30%, #b2e0d4 100%); /* Gradiente suave de verde claro a más oscuro */
+.ubicacion {
+    background: linear-gradient(to bottom right, #e6f9e9, #b3e0d9); /* Fondo degradado elegante */
     padding: 60px 20px; /* Espaciado generoso */
     text-align: center; /* Centrar texto */
-    border-top: 6px solid #28a745; /* Línea superior verde más gruesa */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada para profundidad */
-    border-radius: 10px; /* Bordes redondeados */
+    border-top: 8px solid #00573d; /* Línea superior verde más gruesa y oscura */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada para profundidad */
+    border-radius: 20px; /* Bordes redondeados más marcados */
     margin: 40px 0; /* Margen superior e inferior */
-    position: relative; /* Para posicionar el pseudo-elemento */
-    overflow: hidden; /* Para ocultar el pseudo-elemento si es necesario */
+    position: relative; /* Para efectos de pseudo-elementos */
+    overflow: hidden; /* Ocultar desbordamiento */
 }
 
-/* Añadir un patrón sutil de fondo */
+/* Encabezado de la ubicación */
+.ubicacion-header {
+    margin-bottom: 30px; /* Espacio inferior para el encabezado */
+    position: relative; /* Para aplicar efectos */
+}
+
+/* Estilo del título */
+.ubicacion-header h2 {
+    font-size: 40px; /* Tamaño de fuente mayor */
+    font-weight: 700; /* Peso de fuente fuerte */
+    color: #00573d; /* Color verde más oscuro para mayor elegancia */
+    text-transform: uppercase; /* Convertir a mayúsculas */
+    letter-spacing: 3px; /* Espaciado entre letras para un aspecto más refinado */
+    border-bottom: 4px solid #28a745; /* Línea inferior verde */
+    display: inline-block; /* Para alinear con el borde */
+    padding-bottom: 10px; /* Espaciado entre el texto y la línea */
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.7); /* Sombra más marcada para el texto */
+    transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+.ubicacion-header h2:hover {
+    color: #28a745; /* Cambio de color en hover para mayor dinamismo */
+}
+
+/* Efecto de brillos */
 .ubicacion::before {
     content: '';
     position: absolute;
@@ -954,45 +978,41 @@ li::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../imgs/patron-sutil.png'); /* Cambia esto a la ruta de tu imagen de patrón */
-    opacity: 0.1; /* Opacidad para que el patrón no sea demasiado intrusivo */
-    z-index: 1; /* Asegurarte de que está detrás del contenido */
+    background: rgba(255, 255, 255, 0.15); /* Capa blanca sutil */
+    border-radius: 20px; /* Bordes redondeados */
+    z-index: 0; /* Asegurarse de que quede detrás del contenido */
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); /* Efecto brillante */
 }
 
-.ubicacion-header {
-    margin-bottom: 30px; /* Espacio inferior para el encabezado */
-    position: relative; /* Para mantener la posición del texto sobre el patrón */
-    z-index: 2; /* Asegurarte de que el texto esté por encima del patrón */
-}
-
-.ubicacion-header h2 {
-    font-size: 38px; /* Tamaño de fuente mayor */
-    font-weight: 700; /* Peso de fuente fuerte */
-    color: #007a33; /* Color verde más oscuro para mayor elegancia */
-    text-transform: uppercase; /* Convertir a mayúsculas */
-    letter-spacing: 2px; /* Espaciado entre letras para un aspecto más refinado */
-    border-bottom: 2px solid #28a745; /* Línea inferior verde */
-    display: inline-block; /* Para alinear con el borde */
-    padding-bottom: 10px; /* Espaciado entre el texto y la línea */
-}
-
+/* Estilo del contenedor del mapa */
 .map-container {
     max-width: 1200px; /* Ancho máximo del contenedor del mapa */
     margin: 0 auto; /* Centrar el contenedor */
     border: 5px solid #28a745; /* Borde verde alrededor del mapa */
-    border-radius: 10px; /* Bordes redondeados */
+    border-radius: 15px; /* Bordes redondeados */
     overflow: hidden; /* Ocultar desbordamiento */
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25); /* Sombra más pronunciada */
-    transition: transform 0.3s ease; /* Transición suave al pasar el ratón */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25); /* Sombra más pronunciada */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave al pasar el ratón */
 }
 
 .map-container:hover {
-    transform: scale(1.02); /* Efecto de zoom al pasar el ratón */
+    transform: scale(1.03); /* Efecto de zoom al pasar el ratón */
+    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada al pasar el ratón */
 }
 
+/* Estilo del iframe */
 iframe {
     border: none; /* Eliminar bordes del iframe */
+    border-radius: 10px; /* Bordes redondeados para el iframe */
+    width: 100%; /* Asegurarse de que el iframe sea responsivo */
+    height: 400px; /* Altura del mapa */
+    transition: transform 0.3s ease; /* Transición suave al pasar el ratón */
 }
+
+iframe:hover {
+    transform: scale(1.01); /* Efecto de zoom suave para el mapa */
+}
+
 
 
         </style>
