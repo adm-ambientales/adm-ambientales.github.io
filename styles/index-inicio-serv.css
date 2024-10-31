@@ -1,15 +1,19 @@
 /* Sección de servicios */
 .services {
-    background: linear-gradient(135deg, rgba(240, 249, 244, 0.9), rgba(255, 255, 255, 0.7)), url('ruta/a/tu/fondo.jpg') no-repeat center center/cover;
+    background: 
+        url('../imgs/') no-repeat top left / 20%, /* Primera imagen */
+        url('ruta/a/tu/imagen2.jpg') no-repeat bottom right / 40%, /* Segunda imagen */
+        url('../imgs/sutil-img2.jpg') no-repeat center / cover; /* Tercera imagen */
     padding: 60px 40px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
     position: relative;
-    }
-    
-    .services h2 {
+}
+
+/* Estilo del encabezado */
+.services h2 {
     width: 100%;
     text-align: center;
     margin-bottom: 40px;
@@ -21,9 +25,10 @@
     border-bottom: 2px solid #004d26;
     padding-bottom: 10px;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-    }
-    
-    .service {
+}
+
+/* Estilos de cada servicio */
+.service {
     flex-basis: calc(25% - 20px);
     padding: 30px;
     background: rgba(255, 255, 255, 0.9);
@@ -36,58 +41,65 @@
     align-items: center;
     position: relative;
     overflow: hidden;
-    }
-    
-    .service-image {
+}
+
+/* Imagen del servicio */
+.service-image {
     width: 100%;
     height: 150px;
     overflow: hidden;
     border-radius: 12px;
     margin-bottom: 15px;
-    }
-    
-    .service-image img {
+    position: relative; /* Permitir posicionamiento relativo */
+}
+
+/* Imagen dentro del contenedor de la imagen del servicio */
+.service-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s;
-    }
-    
-    .service-image img:hover {
+}
+
+/* Efecto hover en la imagen */
+.service-image img:hover {
     transform: scale(1.1);
-    }
-    
-    .service h3 {
+}
+
+/* Estilo del encabezado dentro de cada servicio */
+.service h3 {
     margin: 10px 0;
     font-size: 24px;
     font-weight: bold;
     color: #004d26;
     text-shadow: 0 2px 4px rgba(40, 167, 69, 0.6);
-    }
-    
-    .service p {
+}
+
+/* Estilo del párrafo dentro de cada servicio */
+.service p {
     font-size: 16px;
     color: #555;
     line-height: 1.5;
     text-align: justify;
     max-height: 120px;
     overflow-y: auto;
-    }
-    
-    /* Estilos al pasar el cursor */
-    .service:hover {
+}
+
+/* Estilo al pasar el cursor sobre el servicio */
+.service:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-    }
-    
-    @media (max-width: 768px) {
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
     .service {
-    flex-basis: calc(45% - 20px);
+        flex-basis: calc(45% - 20px);
     }
-    }
-    
-    @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
     .service {
-    flex-basis: 100%;
+        flex-basis: 100%;
     }
-    }
+}
