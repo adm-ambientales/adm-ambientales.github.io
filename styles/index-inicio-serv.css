@@ -10,6 +10,8 @@
     justify-content: center;
     gap: 30px;
     position: relative;
+    border-radius: 10px; /* Bordes redondeados para la sección */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave para la sección */
 }
 
 /* Estilo del encabezado */
@@ -19,22 +21,22 @@
     margin-bottom: 40px;
     font-size: 36px;
     font-weight: bold;
-    color: #004d26;
+    color: #2c3e50; /* Color oscuro y elegante */
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-bottom: 2px solid #004d26;
+    border-bottom: 2px solid #2980b9; /* Línea inferior azul */
     padding-bottom: 10px;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* Estilos de cada servicio */
 .service {
-    flex-basis: calc(25% - 20px);
+    flex-basis: calc(30% - 20px); /* Ancho flexible para 3 por fila */
     padding: 30px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s, box-shadow 0.3s;
+    background: linear-gradient(135deg, #b2ebf2 30%, #a2f7bf 70%); /* Fondo gradient */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra elegante */
+    transition: transform 0.3s, box-shadow 0.3s; /* Suave transición */
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -46,11 +48,10 @@
 /* Imagen del servicio */
 .service-image {
     width: 100%;
-    height: 150px;
+    height: 180px; /* Mantener una altura uniforme */
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 12px; /* Bordes redondeados para las imágenes */
     margin-bottom: 15px;
-    position: relative; /* Permitir posicionamiento relativo */
 }
 
 /* Imagen dentro del contenedor de la imagen del servicio */
@@ -58,12 +59,13 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s;
+    transition: transform 0.3s, opacity 0.3s; /* Transiciones suaves */
 }
 
 /* Efecto hover en la imagen */
 .service-image img:hover {
-    transform: scale(1.1);
+    transform: scale(1.05); /* Sutil aumento al pasar el ratón */
+    opacity: 0.9; /* Disminución de opacidad al pasar el ratón */
 }
 
 /* Estilo del encabezado dentro de cada servicio */
@@ -73,33 +75,67 @@
     font-weight: bold;
     color: #004d26;
     text-shadow: 0 2px 4px rgba(40, 167, 69, 0.6);
+    text-transform: uppercase; /* Títulos en mayúsculas */
+    letter-spacing: 0.5px; /* Espaciado entre letras */
 }
 
 /* Estilo del párrafo dentro de cada servicio */
 .service p {
     font-size: 16px;
     color: #555;
-    line-height: 1.5;
+    line-height: 1.6;
     text-align: justify;
-    max-height: 120px;
-    overflow-y: auto;
+    max-height: 120px; /* Limitar altura del texto */
+    overflow-y: auto; /* Habilitar desplazamiento si es necesario */
+    margin-bottom: 15px; /* Espacio inferior */
 }
 
 /* Estilo al pasar el cursor sobre el servicio */
 .service:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    transform: translateY(-5px); /* Efecto de elevación */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25); /* Sombra más intensa */
 }
 
 /* Estilos para dispositivos móviles */
 @media (max-width: 768px) {
     .service {
-        flex-basis: calc(45% - 20px);
+        flex-basis: calc(45% - 20px); /* 2 por fila en pantallas medianas */
     }
 }
 
 @media (max-width: 480px) {
     .service {
-        flex-basis: 100%;
+        flex-basis: 100%; /* 1 por fila en pantallas pequeñas */
     }
+}
+
+/* Estilo de la lista */
+.service ul {
+    padding-left: 20px; /* Sangría para listas */
+    text-align: left; /* Alinear texto a la izquierda para mayor claridad */
+    margin-bottom: 15px; /* Espacio inferior */
+}
+
+.service ul li {
+    margin-bottom: 8px; /* Espacio entre elementos de lista */
+    color: #333; /* Color de texto para las listas */
+    font-size: 14px; /* Tamaño de fuente más pequeño para lista */
+}
+
+/* Estilo del botón */
+.eco-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px; /* Botón más grande y elegante */
+    color: white;
+    background-color: #2980b9; /* Color azul del botón */
+    border-radius: 6px; /* Bordes redondeados para el botón */
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+}
+
+.eco-button:hover {
+    background-color: #3498db; /* Color más claro al pasar el ratón */
+    transform: translateY(-2px); /* Efecto de elevación al pasar el ratón */
 }
