@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./files/mainResponsive.css">
     <link rel="icon" href="../imgs/favicon.jpeg">
     <title>Servicios - Administradores Ambientales</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Estilos generales */
         * {
@@ -13,43 +14,69 @@
             margin: 0;
             padding: 0;
         }
-        
+
         body {
             font-family: 'Arial', sans-serif;
             color: #333;
-            background: linear-gradient(to right, #e2f0d9, #c7f0d9);
+            background: linear-gradient(to bottom, #e9f5e9, #c7f0d9);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Encabezado */
-        .header {
-            background: #8DB600;
-            color: #ffffff;
-            text-align: center;
-            padding: 80px 20px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
+/* Encabezado con imagen de fondo */
+.header {
+    background: url('../imgs/header-2.jfif') no-repeat center center;
+    background-size: cover;
+    color: #ffffff;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    border-bottom: 5px solid #003b20;
+    transition: background 0.3s;
+}
 
-        .header h1 {
-            font-size: 3.5em;
-            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.7);
-            margin-bottom: 10px;
-            animation: glowing 1.5s infinite alternate;
-        }
+/* Overlay para mejorar legibilidad sobre la imagen */
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 77, 38, 0.6); /* Sutil capa verde para mejorar la legibilidad */
+    z-index: 1;
+}
 
-        @keyframes glowing {
-            0% { text-shadow: 0 0 5px #ffffff, 0 0 10px #00b300, 0 0 15px #00b300; }
-            100% { text-shadow: 0 0 10px #ffffff, 0 0 20px #00b300, 0 0 30px #00b300; }
-        }
+.header h1 {
+    position: relative;
+    font-size: 4em;
+    font-family: 'Playfair Display', serif;
+    color: #e1ffe1;
+    text-shadow: 2px 2px 15px rgba(0, 77, 38, 0.9), 0 0 10px #baffb0;
+    margin-bottom: 10px;
+    animation: glowing 1.5s infinite alternate;
+    z-index: 2;
+}
 
-        .subtitle {
-            font-size: 1.5em;
-            font-weight: 300;
-            opacity: 0.9;
-        }
+@keyframes glowing {
+    0% { text-shadow: 0 0 10px #ffffff, 0 0 15px #8DB600, 0 0 20px #007d40; }
+    100% { text-shadow: 0 0 15px #e1ffe1, 0 0 25px #8DB600, 0 0 30px #004d26; }
+}
+
+.subtitle {
+    position: relative;
+    font-size: 1.7em;
+    font-weight: 300;
+    color: #d2fbd2;
+    opacity: 0.95;
+    text-shadow: 1px 1px 10px rgba(0, 77, 38, 0.7);
+    margin-top: 5px;
+    z-index: 2;
+}
+
+
 
         /* Introducción */
         .introduction {
@@ -59,14 +86,15 @@
             background-color: #ffffff;
             gap: 20px;
             text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
             margin: 20px;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .introduction:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
         }
 
         .intro-text, .intro-image {
@@ -79,6 +107,8 @@
             font-size: 2.4em;
             color: #004d26;
             margin-bottom: 10px;
+            border-bottom: 2px solid #8DB600; /* Línea decorativa */
+            padding-bottom: 10px;
         }
 
         .intro-text p {
@@ -90,8 +120,8 @@
         .intro-image img {
             max-width: 100%;
             border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s;
         }
 
         .intro-image img:hover {
@@ -105,14 +135,16 @@
             padding: 60px 20px;
             text-align: center;
             margin: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
 
         .key-features h2 {
             color: #004d26;
             font-size: 2.4em;
             margin-bottom: 20px;
+            border-bottom: 2px solid #8DB600; /* Línea decorativa */
+            padding-bottom: 10px;
         }
 
         .features-list {
@@ -128,14 +160,15 @@
         .features-list li {
             padding: 10px;
             border-bottom: 1px solid #ddd;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.3s, color 0.3s; 
         }
 
         .features-list li:hover {
             background-color: #e6f5e6;
             color: #007d40;
             font-weight: bold;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px); /* Efecto de elevación */
         }
 
         /* Llamada a la acción */
@@ -146,8 +179,13 @@
             padding: 60px 20px;
             position: relative;
             margin: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            transition: box-shadow 0.3s;
+        }
+
+        .cta:hover {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
         }
 
         .cta h2 {
@@ -156,34 +194,69 @@
         }
 
         .contact-button {
-    padding: 15px 40px;
-    font-size: 1.2em;
-    color: #ffffff; /* Color del texto */
-    background-color: #007d40; /* Color de fondo */
-    border: 2px solid #005a30; /* Borde más oscuro */
-    border-radius: 25px; /* Bordes redondeados */
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
-}
+            padding: 15px 40px;
+            font-size: 1.2em;
+            color: #ffffff;
+            background-color: #007d40;
+            border: 2px solid #005a30;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
 
-.contact-button:hover {
-    background-color: #005a30; /* Color de fondo al pasar el mouse */
-    border-color: #003b20; /* Cambia el color del borde */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
-    transform: scale(1.05); /* Aumentar tamaño del botón */
-}
+        .contact-button:hover {
+            background-color: #005a30;
+            border-color: #003b20;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            transform: scale(1.05);
+        }
+
+        /* Sección de imágenes adicionales */
+        .additional-images {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 20px;
+            gap: 20px;
+            margin: 20px;
+            flex-wrap: wrap;
+        }
+
+        .image-box {
+            flex: 1 1 30%;
+            max-width: 300px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s;
+        }
+
+        .image-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .image-box:hover img {
+            transform: scale(1.1);
+        }
 
         /* Footer */
         .footer {
-            background-color: #8DB600;
+            background-color: #003b20; /* Color oscuro */
             color: #ffffff;
             text-align: center;
             padding: 20px;
             font-size: 0.9em;
             position: relative;
             margin-top: 20px;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .footer p {
@@ -198,65 +271,474 @@
         <h1>Destrucciones Fiscales e Industriales</h1>
         <p class="subtitle">Garantizamos el cumplimiento y seguridad en la eliminación de sus productos.</p>
     </header>
+<style>
+    /* Estilo del contenedor general de la introducción */
+.introduction {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-left: 5px solid #4CAF50; /* Borde verde en el lateral izquierdo */
+    font-family: Arial, sans-serif;
+}
 
+/* Estilo del texto de introducción */
+.intro-text h2 {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #4CAF50;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.intro-text p {
+    color: #555;
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Estilo de la lista viñetada */
+.intro-text ul {
+    list-style-type: none; /* Sin viñetas predeterminadas */
+    padding-left: 0;
+}
+
+.intro-text li {
+    background: #e8f5e9;
+    color: #333;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid #4CAF50; /* Color verde en el borde izquierdo */
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.intro-text li:hover {
+    transform: translateX(5px); /* Efecto de desplazamiento en hover */
+}
+
+.intro-text li p {
+    font-size: 0.95em;
+    color: #666;
+    margin-top: 8px;
+    padding-left: 20px; /* Espacio para alinear con el icono */
+}
+
+/* Icono personalizado al inicio de cada li */
+.intro-text li::before {
+    content: '✔'; /* Icono de verificación */
+    color: #4CAF50;
+    font-size: 1.5em;
+    position: absolute;
+    left: -35px;
+    top: 15px;
+}
+
+.intro-text ul li:first-child::before {
+    content: '🚛'; /* Icono de camión para la primera opción */
+}
+
+.intro-text ul li:last-child::before {
+    content: '♻️'; /* Icono de reciclaje para la última opción */
+}
+
+.img-container {
+            display: inline-block; /* Para que el contenedor se ajuste al tamaño de la imagen */
+            border-radius: 15px; /* Bordes redondeados */
+            overflow: hidden; /* Para que el borde redondeado funcione correctamente */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
+            transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+        }
+
+        .img-container img {
+            display: block; /* Para evitar espacios en la parte inferior de la imagen */
+            width: 100%; /* Asegura que la imagen se ajuste al contenedor */
+            height: auto; /* Mantiene la proporción de la imagen */
+            border-radius: 15px; /* Asegura que la imagen tenga bordes redondeados */
+        }
+
+        .img-container:hover {
+            transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Sombra más intensa en hover */
+        }
+
+        /* Efecto de brillo */
+        .img-container:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2); /* Capa de brillo */
+            border-radius: 15px; /* Bordes redondeados en la capa de brillo */
+            opacity: 0;
+            transition: opacity 0.3s; /* Transición suave para el brillo */
+            z-index: 1; /* Asegura que esté por encima de la imagen */
+        }
+
+        .img-container:hover:before {
+            opacity: 1; /* Muestra el brillo en hover */
+        }
+</style>
     <!-- Sección de introducción -->
     <section class="introduction">
         <div class="intro-text">
             <h2>Descripción del Servicio</h2>
             <p>Ofrecemos un servicio especializado en la destrucción fiscal e industrial de productos. Nuestro proceso asegura la eliminación segura, responsable y controlada.</p>
             <p>Contamos con:</p>
-            <br></br>
             <ul>
-                <li>Recolección y transporte autorizado</li> 
-                <p>Disposición de nuestras unidades de transporte para residuos: Camiones Frontales, camión torton caja cerrada, unidades Roll Off.</p>
-                <br></br>
-                <li>Destrucción y reciclaje de los subproductos</li>
-                <p>Garantizamos la destrucción y reciclaje o confinamiento de los subproductos generados.</p>
-                <br></br>
-                <li>Entrega de evidencias de la destrucción</li>
-                <p>Proporcionamos evidencias fotográficas de la recepción y destrucción de la mercancía.</p>
-                <br></br>
-                <li>Certificado de destrucción fiscal</li>
-                <p>Ofrecemos certificado que verifica la correcta disposición y destrucción de la mercancía y residuo.</p>
+                <li>Recolección y transporte autorizado
+                    <p>Disposición de nuestras unidades de transporte para residuos: Camiones Frontales, camión torton caja cerrada, unidades Roll Off.</p>  <div class="img-container">
+                        <img src="../imgs/montacargas.png" alt="Img Montacargas">
+                    </div>
+                </li>
+                <li>Destrucción y reciclaje de los subproductos
+                    <p>Garantizamos la destrucción y reciclaje responsable, contribuyendo a la sostenibilidad y protección del medio ambiente.</p> 
+                </li>
             </ul>
+           
         </div>
         <div class="intro-image">
-            <img src="../imgs/residuos.png" alt="Imagen de Destrucción Fiscal e Industrial">
+            <img src="../imgs/general-img.jfif" alt="Servicio de Destrucción">
+            <br></br>
+            <img src="../imgs/residuos.png" alt="Servicio de Destrucción">
         </div>
     </section>
 
-    <!-- Sección de características clave -->
+    <!-- Características clave -->
     <section class="key-features">
-        <h2>Contamos con la experiencia en la destrucción de los siguientes diferentes tipos de productos.</h2>
-        <ul class="features-list">
-            <li>Caducidad</li>
-            <li>Producto terminado</li>
-            <li>Materia prima grado alimenticio</li>
-            <li>Cosméticos</li>
-            <li>Línea blanca</li>
-            <li>Electrónicos</li>
-            <li>Electrodomésticos</li>
-            <li>Textiles</li>
-            <li>Avíos para la confección</li>
-            <li>Etiquetas plásticas y papel</li>
-            <li>Residuos de fábrica</li>
-        </ul>
-    </section>
+        <style>
 
-<!-- Llamada a la acción -->
-<section class="cta">
-    <h2>¡Contáctanos hoy mismo!</h2>
-    <p>Estamos aquí para ayudarte a eliminar tus productos de manera segura y eficiente.</p>
-    <br></br>
-    <button class="contact-button" onclick="window.location.href='../index.html'">Contactar</button>
-</section>
+body {
+            font-family: 'Arial', sans-serif;
+            background-color: #eaf5e3;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .additional-images {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 40px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #d7e9d8, #f3f9e9);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), inset 0 0 20px rgba(255, 255, 255, 0.2);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .additional-images::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 20%, transparent 80%);
+            transform: rotate(45deg);
+            animation: backgroundGlow 6s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes backgroundGlow {
+            0% { transform: rotate(45deg) scale(1); }
+            50% { transform: rotate(45deg) scale(1.2); }
+            100% { transform: rotate(45deg) scale(1); }
+        }
+
+        .additional-images h2 {
+            font-size: 2.5em;
+            color: #1e555c;
+            margin-bottom: 15px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .additional-images p {
+            font-size: 1.2em;
+            color: #3b3b3b;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            padding: 0 20px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .additional-images:hover p {
+            color: #1a3c40;
+        }
+
+        .image-box {
+            display: inline-block;
+            width: 30%;
+            margin: 1.5%;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        .image-box img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.6s ease;
+        }
+
+        .image-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 1;
+        }
+
+        .image-box:hover::before {
+            opacity: 1;
+            backdrop-filter: blur(3px);
+        }
+
+        .image-box:hover img {
+            transform: scale(1.1);
+        }
+
+        .image-box:hover {
+            transform: scale(1.08);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .image-box::after {
+          
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            color: #2e7d32;
+            opacity: 0;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            z-index: 2;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .image-box:hover::after {
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
+    
+        /* Contenedor principal para centrar el contenido */
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e0f7e9, #d4e2e8);
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Sección CTA con borde verde elegante */
+        .cta {
+            max-width: 700px;
+            padding: 40px 30px;
+            background: #ffffff;
+            border: 3px solid #66bb6a;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Efecto de Brillo Sutil */
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 80%);
+            transform: rotate(45deg);
+            opacity: 0.5;
+            animation: backgroundGlow 6s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes backgroundGlow {
+            0% { transform: rotate(45deg) scale(1); }
+            50% { transform: rotate(45deg) scale(1.1); }
+            100% { transform: rotate(45deg) scale(1); }
+        }
+
+        /* Título */
+        .cta-title {
+            font-size: 2.5em;
+            color: #2e7d32;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* Agrega un icono de hoja al título */
+        .cta-title i {
+            color: #66bb6a;
+        }
+
+        /* Texto */
+        .cta-text {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            font-weight: 500;
+            padding: 0 20px;
+        }
+
+        /* Botón */
+        .contact-button {
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 15px 40px;
+            color: #ffffff;
+            background: linear-gradient(135deg, #2e7d32, #43a047);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Agrega un icono de mensaje al botón */
+        .contact-button i {
+            font-size: 1.2em;
+        }
+
+        /* Brillo en Hover del Botón */
+        .contact-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.5s ease;
+            border-radius: 50%;
+        }
+
+        .contact-button:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .contact-button:hover {
+            background: linear-gradient(135deg, #388e3c, #66bb6a);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Animación sutil al pasar el mouse sobre la sección completa */
+        .cta:hover {
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            transform: scale(1.02);
+        }
+        </style>
+    
+    
+        <!-- Sección de imágenes adicionales con texto de marketing -->
+        <section class="additional-images">
+            <h2>La Tranquilidad de Elegir al Mejor</h2>
+            <p>Sabemos que al momento de manejar residuos sensibles, necesitas más que un servicio: buscas un socio confiable que te brinde paz mental y la certeza de un trabajo bien hecho. En nuestra empresa, combinamos décadas de experiencia con un enfoque humano, brindando no solo soluciones, sino también empatía y responsabilidad. A diferencia de otros, nosotros nos aseguramos de que cada etapa del proceso esté diseñada para cumplir con los más altos estándares de seguridad, confidencialidad y compromiso ambiental. Cada informe detallado que te entregamos refleja nuestra transparencia, porque entendemos que solo la confianza y la excelencia son suficientes para proteger lo que más valoras. No solo somos un proveedor, somos tu respaldo. Confía en nosotros para hacer la diferencia.</p>
+    
+            <div class="image-box">
+                <img src="../imgs/green-img.jfif" alt="Proceso de Destrucción 1">
+            </div>
+            <div class="image-box">
+                <img src="../imgs/logo-prop2.jpg" alt="Proceso de Destrucción 2">
+            </div>
+            <div class="image-box">
+                <img src="../imgs/green-truck.png" alt="Proceso de Destrucción 3">
+            </div>
+            <br></br>
+            <h2 class="cta-title">¡Contáctenos Hoy!</h2>
+    <p class="cta-text">Para más información sobre nuestros servicios de destrucción fiscal e industrial, comuníquese con nosotros.</p>
+    <a href="https://adm-ambientales.github.io/#footer" target="_blank">
+        <button class="contact-button">Contáctenos</button>
+    </a>
+        </section>
 
 
-    <!-- Pie de página -->
+    <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2024 Administradores Ambientales</p>
-        <p>Todos los derechos reservados.</p>
-    </footer>
+        <style>
+            .footer {
+    background-color: #1c1c1c; /* Color oscuro para un aspecto elegante */
+    color: #f5f5f5; /* Texto claro para contraste */
+    padding: 30px 20px; /* Espaciado generoso */
+    text-align: center; /* Centrar el contenido */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+    font-family: 'Arial', sans-serif; /* Fuente limpia y profesional */
+}
 
+.footer-content {
+    max-width: 1200px; /* Limitar el ancho del contenido */
+    margin: 0 auto; /* Centrar el contenido */
+}
+
+.footer-text {
+    margin: 0; /* Eliminar márgenes */
+    font-size: 16px; /* Tamaño de fuente elegante */
+}
+
+.footer-links {
+    margin-top: 10px; /* Espaciado entre el texto y los enlaces */
+}
+
+.footer-link {
+    color: #e2e2e2; /* Color claro para los enlaces */
+    text-decoration: none; /* Sin subrayado */
+    margin: 0 15px; /* Espaciado entre los enlaces */
+    transition: color 0.3s; /* Transición suave */
+}
+
+.footer-link:hover {
+    color: #ffd700; /* Color dorado al pasar el ratón */
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+        </style>
+        <p>© 2024 Administradores Ambientales. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
