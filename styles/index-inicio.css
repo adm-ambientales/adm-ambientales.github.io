@@ -307,10 +307,38 @@ body.loaded #loading-page {
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: 52px; /* Tamaño del texto prominente */
+    font-weight: 700;
+    font-family: 'Merriweather', serif; /* Tipografía serif para un estilo clásico y profesional */
+    color: transparent;
+    background: linear-gradient(90deg, #b88900, #8cf8a7); /* Gradiente dorado refinado */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px; /* Espaciado ligero */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4); /* Sombra sutil */
+    padding: 10px 0;
+    border-bottom: 3px solid rgba(212, 175, 55, 0.8); /* Línea inferior dorada para elegancia */
     margin-bottom: 20px;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
+
+.hero h1:hover {
+    transform: translateY(-3px); /* Efecto de elevación sutil */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra ligeramente más marcada en hover */
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 28px; /* Ajuste de tamaño para móviles */
+        padding: 5px 0;
+        border-bottom: 2px solid rgba(212, 175, 55, 0.7); /* Línea inferior ligeramente reducida */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* Sombra reducida */
+    }
+}
+
 
 .hero button {
     position: relative; /* Necesario para el efecto de brillo */
