@@ -533,6 +533,45 @@ li::before {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra para darle profundidad */
 }
 
+/* Estilo para listas */
+.service ul {
+    padding-left: 20px; /* Sangría a la izquierda */
+    list-style: none; /* Quitar viñetas */
+    margin: 10px 0; /* Margen superior e inferior */
+}
+
+/* Elementos de la lista */
+.service li {
+    position: relative; /* Posicionamiento relativo */
+    padding-left: 20px; /* Espaciado interno */
+    margin-bottom: 10px; /* Espacio inferior */
+    color: #444; /* Color del texto */
+}
+
+/* Agregar un ícono a cada viñeta */
+.service li::before {
+    content: "✔"; /* Cambia este símbolo por cualquier otro icono que te guste */
+    position: absolute;
+    left: 0; /* Alineado a la izquierda */
+    color: #4CAF50; /* Color del ícono */
+    font-size: 1.2em; /* Tamaño del ícono */
+}
+
+/* Asegúrate de que el contenedor del texto no tenga restricciones de altura */
+.service {
+    overflow: visible; /* Permitir que el contenido se muestre sin restricciones */
+    height: auto; /* Asegúrate de que la altura sea automática */
+}
+/* Estilo para párrafos */
+.service p {
+    color: #333; /* Color del texto */
+    margin-bottom: 15px; /* Espacio inferior */
+    padding: 10px; /* Padding para suavizar la caja */
+    background: rgba(255, 255, 255, 0.1); /* Fondo sutil */
+    border-left: 4px solid #4CAF50; /* Borde izquierdo */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
     </style>
     <h2>Nuestros Servicios 🌿</h2>
     
