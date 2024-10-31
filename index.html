@@ -494,6 +494,45 @@ ul {
     max-height: 300px; /* Ajusta la altura máxima según tus necesidades */
 }
 
+/* Estilos generales para las listas */
+ul {
+    list-style: none; /* Eliminar el estilo de lista predeterminado */
+    padding: 0; /* Eliminar el padding por defecto */
+    margin: 20px 0; /* Espacio entre listas */
+}
+
+/* Estilo para los elementos de la lista */
+li {
+    position: relative; /* Permite posicionar pseudo-elementos */
+    padding-left: 30px; /* Espacio a la izquierda para la viñeta personalizada */
+    margin-bottom: 10px; /* Espacio entre elementos de la lista */
+    color: #555; /* Color de texto */
+    font-size: 1.1em; /* Tamaño de fuente */
+}
+
+/* Crear viñetas personalizadas */
+li::before {
+    content: ''; /* Pseudo-elemento vacío */
+    position: absolute; /* Posicionamiento absoluto */
+    left: 0; /* Alinear a la izquierda */
+    top: 50%; /* Centrar verticalmente */
+    transform: translateY(-50%); /* Ajustar la posición vertical */
+    width: 10px; /* Ancho de la viñeta */
+    height: 10px; /* Altura de la viñeta */
+    border-radius: 50%; /* Hacer la viñeta redonda */
+    background: linear-gradient(135deg, rgba(40, 167, 69, 1) 0%, rgba(255, 255, 0, 1) 100%); /* Degradado elegante */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5); /* Sombra para profundidad */
+}
+
+/* Estilo para el contenedor de la lista */
+.service ul {
+    border: 1px solid #ddd; /* Borde suave alrededor de la lista */
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: rgba(255, 255, 255, 0.4); /* Fondo blanco con un poco de transparencia */
+    padding: 15px; /* Espaciado interno para la lista */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra para darle profundidad */
+}
+
     </style>
     <h2>Nuestros Servicios 🌿</h2>
     
