@@ -152,3 +152,61 @@
     border-top: 10px solid #28a745; /* Color de la flecha */
     margin: 20px auto; /* Centrar la flecha */
 }
+
+
+
+.company-curriculum {
+    position: relative;
+    background: url('../imgs/') no-repeat, 
+                url('../imgs/') no-repeat,
+                url('../imgs/') no-repeat;
+    background-size: 30%, 40%, 70%; /* Ajusta el tamaño de cada imagen */
+    background-position: 10% 20%, bottom right, center; /* Distribución de las imágenes */
+    padding: 60px 20px; /* Espaciado para el contenido */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    margin: 40px 0;
+    overflow: hidden; /* Evitar el desbordamiento */
+}
+
+.cv-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative; /* Para asegurarse de que el contenido se superponga correctamente */
+    z-index: 2; /* Asegura que el contenido esté por encima del fondo */
+}
+
+.cv-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    overflow: hidden;
+    display: flex; /* Habilitar Flexbox */
+    flex-direction: column; /* Colocar elementos en columna */
+    align-items: center; /* Centrar horizontalmente */
+    text-align: center; /* Centrar texto */
+}
+
+
+.cv-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 6px;
+    background-color: #28a745;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Otras reglas de estilo... */
