@@ -11,72 +11,109 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <style>
-    * {
+     * {
         box-sizing: border-box;
+        margin: 0;
+        padding: 0;
     }
 
     body {
         font-family: 'Roboto', sans-serif;
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(to bottom right, #eafaf1, #c0e2d2); /* Degradado suave */
+        background: linear-gradient(to bottom right, #eafaf1, #c0e2d2);
         color: #333;
     }
 
     header {
-        background-color: #8DB600; /* Verde oscuro */
+        background-image: url('../imgs/favicon.jpeg'); /* Cambia esta ruta a la ubicación de tu imagen */
+        background-size: cover;
+        background-position: center;
         color: white;
         text-align: center;
-        padding: 30px 0;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 40px 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        position: relative; /* Necesario para el fondo semitransparente */
+    }
+
+    header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5); /* Fondo negro semitransparente */
+        z-index: 1; /* Asegúrate de que el fondo esté detrás del texto */
+    }
+
+    header h1, header p {
+        position: relative; /* Para asegurarse de que el texto esté por encima del fondo semitransparente */
+        z-index: 2; /* Asegúrate de que el texto esté por encima del fondo */
+        text-shadow: 
+            0 0 5px rgba(255, 255, 255, 0.8), /* Brillo sutil */
+            0 0 10px rgba(255, 255, 255, 0.6), /* Brillo más fuerte */
+            0 0 15px rgba(255, 255, 255, 0.4); /* Brillo adicional */
     }
 
     nav {
-        background-color: #4caf50; /* Verde claro */
+        background-color: #3e8e41;
         padding: 15px 0;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     }
 
     nav ul {
         list-style-type: none;
-        padding: 0;
-        text-align: center; /* Centrar los enlaces de navegación */
+        text-align: center;
     }
 
     nav ul li {
         display: inline;
-        margin: 0 20px;
+        margin: 0 30px;
     }
 
     nav a {
-        color: white;
+        color: #ffeb3b;
         text-decoration: none;
         font-weight: bold;
-        transition: color 0.3s;
+        font-size: 1.1em;
+        transition: color 0.3s, transform 0.3s;
     }
 
     nav a:hover {
-        color: #ffe600; /* Color amarillo claro en hover */
-        text-decoration: underline;
+        color: #ffe600;
+        transform: scale(1.05);
     }
 
     main {
-        padding: 40px;
-        max-width: 800px;
+        padding: 50px;
+        max-width: 900px;
         margin: auto;
-        background-color: #ffffff; /* Blanco */
-        border-radius: 8px;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
     }
 
     section {
-        margin-bottom: 50px;
+        margin-bottom: 60px;
+        padding: 30px;
+        background-color: #f9f9f9; /* Fondo sutil */
+        border-radius: 10px; /* Esquinas redondeadas */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
-    h2 {
-        border-bottom: 3px solid #4caf50; /* Verde claro */
-        padding-bottom: 10px;
-        font-weight: 700;
+    section h2 {
+        font-size: 2em;
+        color: #4caf50;
+        margin-bottom: 15px;
+        position: relative;
+    }
+
+    section h2:after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: #4caf50;
+        margin-top: 10px;
     }
 
     ul {
@@ -85,62 +122,76 @@
     }
 
     ul li {
-        padding: 12px 0;
+        padding: 15px 0;
         position: relative;
-        line-height: 1.6;
+        line-height: 1.8;
+        font-size: 1.1em;
+        padding-left: 30px; /* Espacio para viñetas personalizadas */
     }
 
     ul li:before {
-        content: '';
         position: absolute;
-        left: -25px;
+        left: 0;
         top: 50%;
         transform: translateY(-50%);
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background-color: #4caf50; /* Verde claro */
+        width: 20px; /* Tamaño del icono */
+        height: 20px; /* Tamaño del icono */
+    }
+
+    .image-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 20px 0;
+    }
+
+    .image-container img {
+        width: 30%; /* Ajusta el tamaño de las imágenes */
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
     }
 
     footer {
         text-align: center;
-        padding: 20px 0;
-        background-color: #2c6e49; /* Verde oscuro */
+        padding: 30px 0;
+        background-color: #2c6e49;
         color: white;
+        font-size: 0.9em;
         position: relative;
         bottom: 0;
         width: 100%;
-        font-size: 0.9em;
     }
 
-    /* Estilo para botones */
     .btn {
-        background-color: #4caf50; /* Verde claro */
+        background-color: #4caf50;
         color: white;
-        padding: 10px 20px;
+        padding: 12px 25px;
         border: none;
-        border-radius: 5px;
+        border-radius: 8px;
         text-align: center;
         text-decoration: none;
-        font-size: 16px;
+        font-size: 18px;
         cursor: pointer;
         display: inline-block;
-        transition: background-color 0.3s, transform 0.3s;
+        transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
     .btn:hover {
-        background-color: #45a049; /* Verde más oscuro al pasar el mouse */
-        transform: translateY(-2px); /* Efecto de elevación */
+        background-color: #45a049;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
     .btn:active {
-        transform: translateY(0); /* Regresar a la posición original */
+        transform: translateY(0);
     }
-
 </style>
 <body>
     <header>
         <h1>Ventajas y detalles de nuestros servicios</h1>
+        <br></br>
         <p>Administradores Ambientales - Destrucciones Fiscales</p>
     </header>
     
@@ -162,7 +213,7 @@
                 <li>👷‍♂️ <strong>Experiencia en manejo adecuado de mercancías.</strong></li>
                 <li>♻️ <strong>Destrucción con presencia del cliente.</strong></li>
             </ul>
-            <a href="#entregables" class="btn">Ver Entregables</a> <!-- Botón para navegar -->
+            <a href="#entregables" class="btn">Ver Entregables</a>
         </section>
 
         <section id="entregables">
@@ -173,13 +224,112 @@
                 <li>📋 Carta valorización de residuos.</li>
                 <li>📷 Generación de evidencia fotográfica y/o video durante el proceso de destrucción.</li>
             </ul>
-            <a href="#ventajas" class="btn">Volver a Ventajas</a> <!-- Botón para navegar -->
+            <a href="#ventajas" class="btn">Volver a Ventajas</a>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Servicios de Administradores Ambientales. Todos los derechos reservados.</p>
-        <p>Recuerda que la gestión adecuada de los residuos es esencial para una industria más limpia y saludable.</p>
-    </footer>
+<br></br>
+
+<section id="galeria">
+    <style>
+        #galeria {
+            margin-bottom: 60px;
+            padding: 30px;
+            background: linear-gradient(to bottom right, #a6c2f5, #85f585); /* Fondo degradado */
+            border-radius: 10px; /* Esquinas redondeadas */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #galeria h2 {
+            font-size: 2em;
+            color: #4caf50;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        #galeria h2:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #4caf50;
+            margin-top: 10px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center; /* Centrar imágenes en la fila */
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            width: 270px; /* Tamaño uniforme de las imágenes */
+            height: 270px; /* Mantener la proporción */
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin: 10px; /* Espaciado entre imágenes */
+        }
+
+        /* Estilo para centrar la última imagen en la fila */
+        .image-container .last-img {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+           /* Efecto hover 3D */
+           .image-container img:hover {
+            transform: translateY(-5px) scale(1.05); /* Efecto de elevación y escala */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+        }
+    </style>
+    <h2>Galería de Imágenes</h2>
+    <div class="image-container">
+        <img src="../imgs/gal1.png" alt="Descripción de la imagen 1">
+        <img src="../imgs/gal2.png" alt="Descripción de la imagen 2">
+        <img src="../imgs/gal3.png" alt="Descripción de la imagen 3">
+        <img src="../imgs/gal4.png" alt="Descripción de la imagen 3">
+    </div>
+</section>
+
+
+<footer>
+    <style>
+        footer {
+            background: linear-gradient(to right, #4caf50, #81c784); /* Fondo degradado */
+            color: white; /* Color del texto */
+            text-align: center; /* Centrar el texto */
+            padding: 20px 0; /* Espaciado arriba y abajo */
+            border-top: 5px solid #388e3c; /* Borde superior */
+            position: relative; /* Para efectos futuros si es necesario */
+        }
+
+        footer p {
+            margin: 10px 0; /* Espaciado entre párrafos */
+            font-size: 1.1em; /* Tamaño de fuente más grande */
+            line-height: 1.5; /* Espaciado entre líneas */
+        }
+
+        footer p:first-child {
+            font-weight: bold; /* Hacer el primer párrafo más destacado */
+            font-size: 1.2em; /* Tamaño de fuente más grande */
+        }
+
+        /* Efecto de sombra en el texto */
+        footer p {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra para resaltar el texto */
+        }
+
+        /* Responsividad */
+        @media (max-width: 600px) {
+            footer p {
+                font-size: 1em; /* Ajustar el tamaño de fuente en pantallas pequeñas */
+            }
+        }
+    </style>
+    <p>&copy; 2024 Servicios de Administradores Ambientales. Todos los derechos reservados.</p>
+    <p>Recuerda que la gestión adecuada de los residuos es esencial para una industria más limpia y saludable.</p>
+</footer>
+
 </body>
 </html>
