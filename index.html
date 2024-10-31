@@ -345,6 +345,24 @@ body {
     50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.4); }
 }
 
+/* Estilo para las imágenes de misión y visión */
+.cv-card img {
+    max-width: 80%; /* Ajustar el tamaño máximo de la imagen */
+    height: auto; /* Mantener la proporción de la imagen */
+    margin: 20px auto; /* Centrarlas con margen superior e inferior */
+    display: block; /* Asegurarse de que se comporte como bloque */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 25px rgba(0, 176, 255, 0.8); /* Sombra profunda y resplandor */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para efectos */
+}
+
+/* Efecto de zoom y sombra al pasar el mouse */
+.cv-card img:hover {
+    transform: translateY(-5px) scale(1.05); /* Efecto de aumento y desplazamiento hacia arriba */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 35px rgba(0, 176, 255, 0.6); /* Aumentar la sombra y el resplandor */
+    filter: brightness(1.1); /* Aumentar el brillo ligeramente */
+}
+
         </style>
    <!-- Contenedor del logo -->
    <div class="logo-container relative mx-auto my-12 p-6 rounded-3xl border-gradient shadow-xl backdrop-blur-md">
