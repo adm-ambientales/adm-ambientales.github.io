@@ -23,6 +23,7 @@
             overflow-x: hidden;
         }
 
+
 /* Encabezado con imagen de fondo */
 .header {
     background: url('../imgs/header-2.jfif') no-repeat center center;
@@ -45,7 +46,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 77, 38, 0.6); /* Sutil capa verde para mejorar la legibilidad */
+    background: rgba(0, 77, 38, 0.6);
     z-index: 1;
 }
 
@@ -60,11 +61,6 @@
     z-index: 2;
 }
 
-@keyframes glowing {
-    0% { text-shadow: 0 0 10px #ffffff, 0 0 15px #8DB600, 0 0 20px #007d40; }
-    100% { text-shadow: 0 0 15px #e1ffe1, 0 0 25px #8DB600, 0 0 30px #004d26; }
-}
-
 .subtitle {
     position: relative;
     font-size: 1.7em;
@@ -74,6 +70,41 @@
     text-shadow: 1px 1px 10px rgba(0, 77, 38, 0.7);
     margin-top: 5px;
     z-index: 2;
+}
+
+/* Animación de brillo */
+@keyframes glowing {
+    0% { text-shadow: 0 0 10px #ffffff, 0 0 15px #8DB600, 0 0 20px #007d40; }
+    100% { text-shadow: 0 0 15px #e1ffe1, 0 0 25px #8DB600, 0 0 30px #004d26; }
+}
+
+/* Estilos responsivos para dispositivos pequeños */
+@media (max-width: 768px) {
+    .header {
+        padding: 60px 15px;
+    }
+
+    .header h1 {
+        font-size: 2.5em;
+    }
+
+    .subtitle {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 50px 10px;
+    }
+
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .subtitle {
+        font-size: 1em;
+    }
 }
 
 
@@ -171,18 +202,58 @@
             transform: translateY(-2px); /* Efecto de elevación */
         }
 
-        /* Llamada a la acción */
-        .cta {
-            background: #8DB600;
-            color: #ffffff;
-            text-align: center;
-            padding: 60px 20px;
-            position: relative;
-            margin: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            transition: box-shadow 0.3s;
-        }
+/* Ajuste para la sección de CTA */
+.cta {
+    max-width: 100%; /* Asegura que no exceda el contenedor */
+    width: calc(100% - 40px); /* Un margen adicional para dar espacio dentro del contenedor */
+    padding: 20px;
+    background: #ffffff;
+    border: 3px solid #66bb6a;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    margin: 20px auto;
+    box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
+}
+
+.cta-title {
+    font-size: 1.3em; /* Ajusta el tamaño de la fuente para adaptarse mejor */
+    margin-bottom: 10px;
+    white-space: normal; /* Permite que el texto se divida en dos líneas si es necesario */
+    text-align: center; /* Centra el texto */
+    line-height: 1.2em; /* Reduce el espacio entre líneas */
+    padding: 0 5%; /* Añade un poco de espacio lateral */
+}
+
+
+
+.cta-text {
+    font-size: 1em; /* Tamaño de texto adaptado */
+    line-height: 1.5;
+}
+
+/* Ajuste responsivo para pantallas pequeñas */
+@media (max-width: 480px) {
+    .cta {
+        width: 90%; /* Reduce el ancho en dispositivos pequeños */
+        padding: 15px;
+    }
+    
+    .cta-title {
+        font-size: 1.5em; /* Reduce el tamaño del título */
+    }
+    
+    .cta-text {
+        font-size: 0.9em; /* Reduce el tamaño del texto */
+    }
+    
+    .contact-button {
+        font-size: 0.9em; /* Ajusta el tamaño del botón */
+        padding: 10px 20px;
+    }
+}
+
+
 
         .cta:hover {
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
@@ -411,11 +482,10 @@
         </div>
     </section>
 
-    <!-- Características clave -->
-    <section class="key-features">
-        <style>
 
-body {
+<section class="key-features">
+    <style>
+        body {
             font-family: 'Arial', sans-serif;
             background-color: #eaf5e3;
             color: #333;
@@ -433,30 +503,10 @@ body {
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), inset 0 0 20px rgba(255, 255, 255, 0.2);
             transition: all 0.5s ease;
             position: relative;
-            overflow: hidden;
-        }
-
-        .additional-images::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.2) 20%, transparent 80%);
-            transform: rotate(45deg);
-            animation: backgroundGlow 6s linear infinite;
-            pointer-events: none;
-        }
-
-        @keyframes backgroundGlow {
-            0% { transform: rotate(45deg) scale(1); }
-            50% { transform: rotate(45deg) scale(1.2); }
-            100% { transform: rotate(45deg) scale(1); }
         }
 
         .additional-images h2 {
-            font-size: 2.5em;
+            font-size: 2em;
             color: #1e555c;
             margin-bottom: 15px;
             font-weight: bold;
@@ -468,219 +518,125 @@ body {
         .additional-images p {
             font-size: 1.2em;
             color: #3b3b3b;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             line-height: 1.8;
             padding: 0 20px;
             font-weight: 500;
-            transition: color 0.3s ease;
         }
 
-        .additional-images:hover p {
-            color: #1a3c40;
-        }
+ /* Estilos para la sección de imágenes */
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
 
-        .image-box {
-            display: inline-block;
-            width: 30%;
-            margin: 1.5%;
-            border-radius: 15px;
-            overflow: hidden;
-            position: relative;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.1);
-        }
+.image-box {
+    width: 30%; /* Mantén esto para pantallas grandes */
+    max-width: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .additional-images {
+        padding: 20px;
+    }
+
+    .additional-images h2 {
+        font-size: 1.8em;
+    }
+
+    .additional-images p {
+        font-size: 1em;
+    }
+
+    .image-box {
+        width: 100%; /* Ocupa el 100% en móviles */
+        max-width: none; /* Elimina el límite de ancho máximo */
+        flex: 1 1 calc(33.333% - 20px); /* Distribuye 3 imágenes en línea */
+    }
+
+    .image-container {
+        flex-direction: column; /* Cambia la dirección a columna para que se vea bien en móviles */
+        align-items: center; /* Centra las imágenes */
+    }
+}
+
 
         .image-box img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             transition: transform 0.6s ease;
         }
 
-        .image-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            z-index: 1;
-        }
-
-        .image-box:hover::before {
-            opacity: 1;
-            backdrop-filter: blur(3px);
-        }
-
-        .image-box:hover img {
-            transform: scale(1.1);
-        }
-
-        .image-box:hover {
-            transform: scale(1.08);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.2);
-        }
-
-        .image-box::after {
-          
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 5px 15px;
-            border-radius: 5px;
-            font-size: 0.9em;
-            color: #2e7d32;
-            opacity: 0;
-            transition: opacity 0.4s ease, transform 0.4s ease;
-            z-index: 2;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .image-box:hover::after {
-            opacity: 1;
-            transform: translate(-50%, 0);
-        }
-    
-        /* Contenedor principal para centrar el contenido */
-        .center {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #e0f7e9, #d4e2e8);
-            padding: 0;
-            margin: 0;
-        }
-
-        /* Sección CTA con borde verde elegante */
+        /* Estilos para CTA */
         .cta {
-            max-width: 700px;
-            padding: 40px 30px;
+            width: 1500px;
+            height: 100%;
+            padding: 30px;
             background: #ffffff;
             border: 3px solid #66bb6a;
             border-radius: 20px;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            margin: 20px auto;
         }
 
-        /* Efecto de Brillo Sutil */
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 80%);
-            transform: rotate(45deg);
-            opacity: 0.5;
-            animation: backgroundGlow 6s linear infinite;
-            pointer-events: none;
-        }
-
-        @keyframes backgroundGlow {
-            0% { transform: rotate(45deg) scale(1); }
-            50% { transform: rotate(45deg) scale(1.1); }
-            100% { transform: rotate(45deg) scale(1); }
-        }
-
-        /* Título */
-        .cta-title {
-            font-size: 2.5em;
-            color: #2e7d32;
-            font-weight: bold;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        /* Agrega un icono de hoja al título */
-        .cta-title i {
-            color: #66bb6a;
-        }
-
-        /* Texto */
-        .cta-text {
-            font-size: 1.2em;
-            color: #555;
-            margin-bottom: 25px;
-            line-height: 1.6;
-            font-weight: 500;
-            padding: 0 20px;
-        }
-
-        /* Botón */
         .contact-button {
-            font-size: 1.2em;
-            font-weight: bold;
-            padding: 15px 40px;
-            color: #ffffff;
-            background: linear-gradient(135deg, #2e7d32, #43a047);
+            padding: 12px 30px;
+            font-size: 1em;
+            border-radius: 5px;
+            color: white;
+            background-color: #3e8e41;
+            text-decoration: none;
             border: none;
-            border-radius: 50px;
             cursor: pointer;
-            transition: all 0.4s ease;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
-        /* Agrega un icono de mensaje al botón */
-        .contact-button i {
-            font-size: 1.2em;
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .additional-images {
+                padding: 20px;
+            }
+
+            .additional-images h2 {
+                font-size: 1.8em;
+            }
+
+            .additional-images p {
+                font-size: 1em;
+            }
+
+            .image-box {
+                width: 100%;
+                max-width: 90%;
+            }
         }
 
-        /* Brillo en Hover del Botón */
-        .contact-button::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 300%;
-            height: 300%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
-            transform: translate(-50%, -50%) scale(0);
-            transition: transform 0.5s ease;
-            border-radius: 50%;
-        }
+        .cta-title {
+    font-size: 1.3em; /* Ajusta el tamaño de la fuente para adaptarse mejor */
+    margin-bottom: 10px;
+    white-space: normal; /* Permite que el texto se divida en dos líneas si es necesario */
+    text-align: center; /* Centra el texto */
+    line-height: 1.2em; /* Reduce el espacio entre líneas */
+    padding: 0 5%; /* Añade un poco de espacio lateral */
+}
 
-        .contact-button:hover::before {
-            transform: translate(-50%, -50%) scale(1);
-        }
+    </style>
 
-        .contact-button:hover {
-            background: linear-gradient(135deg, #388e3c, #66bb6a);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
-        }
+    <!-- Sección de imágenes adicionales con texto de marketing -->
+    <section class="additional-images">
+        <h2>La Tranquilidad de Elegir al Mejor</h2>
+        <p>Lorem Ipsum Dolor</p>
 
-        /* Animación sutil al pasar el mouse sobre la sección completa */
-        .cta:hover {
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-            transform: scale(1.02);
-        }
-        </style>
-    
-    
-        <!-- Sección de imágenes adicionales con texto de marketing -->
-        <section class="additional-images">
-            <h2>La Tranquilidad de Elegir al Mejor</h2>
-            <p>Sabemos que al momento de manejar residuos sensibles, necesitas más que un servicio: buscas un socio confiable que te brinde paz mental y la certeza de un trabajo bien hecho. En nuestra empresa, combinamos décadas de experiencia con un enfoque humano, brindando no solo soluciones, sino también empatía y responsabilidad. A diferencia de otros, nosotros nos aseguramos de que cada etapa del proceso esté diseñada para cumplir con los más altos estándares de seguridad, confidencialidad y compromiso ambiental. Cada informe detallado que te entregamos refleja nuestra transparencia, porque entendemos que solo la confianza y la excelencia son suficientes para proteger lo que más valoras. No solo somos un proveedor, somos tu respaldo. Confía en nosotros para hacer la diferencia.</p>
-    
+        <div class="image-container">
             <div class="image-box">
                 <img src="../imgs/green-img.jfif" alt="Proceso de Destrucción 1">
             </div>
@@ -690,13 +646,19 @@ body {
             <div class="image-box">
                 <img src="../imgs/green-truck.png" alt="Proceso de Destrucción 3">
             </div>
-            <br></br>
-            <h2 class="cta-title">¡Contáctenos Hoy!</h2>
-    <p class="cta-text">Para más información sobre nuestros servicios de destrucción fiscal e industrial, comuníquese con nosotros.</p>
-    <a href="https://adm-ambientales.github.io/#footer" target="_blank">
-        <button class="contact-button">Contáctenos</button>
-    </a>
-        </section>
+        </div>
+
+        <!-- CTA section -->
+        <div class="cta">
+            <h2 class="cta-title">Contacto</h2>
+            <p class="cta-text">Para más información sobre nuestros servicios de destrucción fiscal e industrial, comuníquese con nosotros.</p>
+            <a href="https://adm-ambientales.github.io/#footer" target="_blank">
+                <button class="contact-button"><i class="fas fa-envelope"></i> Contáctenos</button>
+            </a>
+        </div>
+    </section>
+</section>
+
 
 
     <!-- Footer -->
