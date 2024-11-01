@@ -235,6 +235,7 @@
             justify-content: center;
             align-items: center;
             gap: 20px;
+            flex-wrap: wrap; /* Allow wrapping of items */
         }
     
         nav ul li {
@@ -302,7 +303,25 @@
             width: 80%;
             left: 10%;
         }
+    
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column; /* Stack items vertically */
+                gap: 10px; /* Reduced gap for smaller screens */
+            }
+    
+            nav a {
+                font-size: 1.1em; /* Smaller font size on mobile */
+                padding: 10px 15px; /* Reduced padding */
+            }
+    
+            nav ul li span {
+                display: none; /* Hide the divider on smaller screens */
+            }
+        }
     </style>
+    
     
     
 
@@ -339,9 +358,10 @@
         #galeria {
             margin-bottom: 60px;
             padding: 30px;
-            background: linear-gradient(to bottom right, #a6c2f5, #85f585); /* Fondo degradado */
-            border-radius: 10px; /* Esquinas redondeadas */
+            background: linear-gradient(to bottom right, #a6c2f5, #85f585);
+            border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
 
         #galeria h2 {
@@ -360,41 +380,102 @@
             margin-top: 10px;
         }
 
-        .image-container {
+        .orbit-container {
             display: flex;
-            justify-content: center; /* Centrar imágenes en la fila */
-            flex-wrap: wrap;
-            margin: 20px 0;
+            justify-content: center;
+            align-items: center;
+            perspective: 900px;
+            height: 400px; /* Ajusta la altura del contenedor para que quepan las imágenes */
+            overflow: hidden;
         }
 
-        .image-container img {
-            width: 270px; /* Tamaño uniforme de las imágenes */
-            height: 270px; /* Mantener la proporción */
+        .orbit {
+            display: flex;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: orbit-rotation 8s infinite linear;
+            transform: translateY(-30px); /* Mueve la órbita hacia arriba para acercar las imágenes al título */
+        }
+
+        .orbit img {
+            width: 250px;
+            height: 200px;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            margin: 10px; /* Espaciado entre imágenes */
+            position: absolute;
+            opacity: 1; /* Cambiar a 1 para que las imágenes sean visibles inicialmente */
+            animation: image-fade 8s infinite;
+            transform: translateY(-30px); /* Ajusta la posición hacia arriba para acercar más las imágenes */
         }
 
-        /* Estilo para centrar la última imagen en la fila */
-        .image-container .last-img {
-            margin-left: auto;
-            margin-right: auto;
+        /* Posición de cada imagen en el círculo */
+        .orbit img:nth-child(1) {
+            transform: rotateY(0deg) translateZ(200px); /* Reduce el valor de translateZ */
+            animation-delay: 0s;
+        }
+        .orbit img:nth-child(2) {
+            transform: rotateY(120deg) translateZ(200px); /* Reduce el valor de translateZ */
+            animation-delay: 2.66s;
+        }
+        .orbit img:nth-child(3) {
+            transform: rotateY(240deg) translateZ(200px); /* Reduce el valor de translateZ */
+            animation-delay: 5.33s;
+        }
+        .orbit img:nth-child(4) {
+            transform: rotateY(360deg) translateZ(200px); /* Reduce el valor de translateZ */
+            animation-delay: 5.33s;
         }
 
-           /* Efecto hover 3D */
-           .image-container img:hover {
-            transform: translateY(-5px) scale(1.05); /* Efecto de elevación y escala */
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+        /* Animaciones */
+        @keyframes orbit-rotation {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+
+        @keyframes image-fade {
+            0%, 33.3% {
+                opacity: 1;
+            }
+            66.6%, 100% {
+                opacity: 0;
+            }
         }
     </style>
     <h2>Galería de Imágenes</h2>
-    <div class="image-container">
-        <img src="../imgs/gal1.png" alt="Descripción de la imagen 1">
-        <img src="../imgs/gal2.png" alt="Descripción de la imagen 2">
-        <img src="../imgs/gal3.png" alt="Descripción de la imagen 3">
-        <img src="../imgs/gal4.png" alt="Descripción de la imagen 3">
+    <div style="display: flex; justify-content: center;">
+        <img src="../imgs/adm_logo-removebg-preview.png" alt="Descripción de la imagen 1" style="width: 300px; height: auto;">
+      
+        
+    </div>
+    <style>
+        h3 {
+            text-align: center; /* Centra el texto */
+            font-size: 2.5em; /* Tamaño de fuente más grande */
+            color: #4caf50; /* Color de texto (puedes cambiarlo) */
+            font-family: 'Arial', sans-serif; /* Tipografía (puedes cambiarla) */
+            margin: 20px 0; /* Margen superior e inferior */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra de texto para un efecto 3D */
+        }
+    </style>
+    
+    <h3>Administradores Ambientales - Destrucciones Fiscales</h3>
+    
+    
+
+    <div class="orbit-container">
+        <div class="orbit">
+            <img src="../imgs/gal1.png" alt="Descripción de la imagen 1">
+            <img src="../imgs/gal2.png" alt="Descripción de la imagen 2">
+            <img src="../imgs/gal3.png" alt="Descripción de la imagen 3">
+            <img src="../imgs/gal4.png" alt="Descripción de la imagen 4">
+        </div>
     </div>
 </section>
+
 
 
 <footer>
