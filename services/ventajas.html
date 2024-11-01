@@ -195,12 +195,116 @@
         <p>Administradores Ambientales - Destrucciones Fiscales</p>
     </header>
     
+    
+    
+    
+    
     <nav>
         <ul>
             <li><a href="#ventajas">Ventajas</a></li>
+            <li><span>|</span></li>
             <li><a href="#entregables">Entregables</a></li>
         </ul>
     </nav>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+    
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom right, #eafaf1, #c0e2d2);
+            color: #333;
+        }
+    
+        /* NAVIGATION STYLING */
+        nav {
+            background: linear-gradient(135deg, #3e8e41, #c9f081);
+            padding: 15px 0;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+    
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+    
+        nav ul li {
+            position: relative;
+        }
+    
+        /* Divider Styling */
+        nav ul li span {
+            color: #fcfbfa;
+            font-size: 1.3em;
+            opacity: 0.6;
+        }
+    
+        /* Link Styling */
+        nav a {
+            color: #fcfbfa;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.3em;
+            padding: 8px 20px;
+            position: relative;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            transition: color 0.4s, box-shadow 0.4s, transform 0.4s, border 0.3s;
+        }
+    
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 8px;
+            background: rgba(255, 235, 59, 0.2);
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.4s, transform 0.4s;
+        }
+    
+        nav a:hover {
+            color: #070707;
+            border: 2px solid #f3c300;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+    
+        nav a:hover::before {
+            opacity: 1;
+            transform: scale(1);
+        }
+    
+        nav a::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -4px;
+            width: 0;
+            height: 2px;
+            background: #f3c300;
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+    
+        nav a:hover::after {
+            width: 80%;
+            left: 10%;
+        }
+    </style>
+    
+    
 
     <main>
         <section id="ventajas">
