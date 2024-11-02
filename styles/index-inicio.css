@@ -38,6 +38,28 @@ font-size: 20px; /* Tamaño de íconos */
 
 
 
+/* Página principal oculta y con un ligero zoom inicial */
+#main-content {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+/* Cuando la página está completamente cargada */
+body.loaded #main-content {
+    opacity: 1;
+    transform: scale(1); /* Vuelve al tamaño original */
+}
+
+
+
+body.loaded #loading-page {
+    opacity: 0;
+    transform: scale(0.9); /* Reduce un poco el tamaño mientras se desvanece */
+}
+
+
+
 
 
 /* Página de carga (Loading Page) */
@@ -51,6 +73,11 @@ align-items: center;
 z-index: 2000;
 flex-direction: column;
 background-color: #f0f4f5; /* Color de fondo sólido */
+}
+
+body.loaded #loading-page {
+    opacity: 0;
+    transform: scale(0.9); /* Reduce un poco el tamaño mientras se desvanece */
 }
 
 .loading-container {
@@ -120,10 +147,7 @@ z-index: 2;
     display: none;
 }
 
-/* Oculta la página de carga cuando termine */
-body.loaded #loading-page {
-    display: none;
-}
+
 
 
 /* Barra de Navegación */
@@ -393,6 +417,3 @@ body.loaded #loading-page {
         opacity: 1;
     }
 }
-
-
-
