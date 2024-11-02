@@ -285,58 +285,65 @@ body {
 
 
     <!-- Sección de presentación -->
+     <br></br>
     <section class="hero">
+        <br></br>
         <div class="hero-content">
+            <br></br>
+            <br></br>
+            <br></br>
          
             <h1>Admnistradores ambientales</h1>
             <h1>Destrucciones fiscales</h1>
+            <section class="imagesNotPage">
+                <style>
+    /* Rotación infinita */
+    @keyframes rotateInfinite {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    
+    /* Estilo de la imagen */
+    .engineImg {
+        width: 100%; /* Asegura que la imagen sea responsiva */
+        max-width: 200px; /* Tamaño máximo para pantallas grandes */
+        animation: rotateInfinite 5s linear infinite;
+    }
+    
+    /* Para pantallas medianas */
+    @media (max-width: 768px) {
+        .engineImg {
+            max-width: 150px; /* Reduce el tamaño en pantallas medianas */
+            animation: rotateInfinite 4s linear infinite; /* Acelera un poco la rotación */
+        }
+    }
+    
+    /* Para pantallas pequeñas */
+    @media (max-width: 480px) {
+        .engineImg {
+            max-width: 100px; /* Aún más pequeño en pantallas pequeñas */
+            animation: rotateInfinite 3s linear infinite; /* Aumenta la velocidad en móviles */
+        }
+    }
+    
+                </style>
+    <img src="./imgs/engine_remove_bg-removebg-preview.png" alt="Engine image" class="engineImg">
+            </section>
+            <br></br>
             <button class="hero__button"  id="pdf-button">CONOCENOS</button>
             <script>
     document.getElementById("pdf-button").addEventListener("click", function() {
-        window.open('./Privacy_Politics.pdf', '_blank'); // Ruta al archivo SOMOS DDM
+        window.open('./Privacy_Politics.pdf', '_blank'); // Ruta al archivo Políticas de Privacidad
     });
 </script>
 
         </div>
        
-        <section class="imagesNotPage">
-            <style>
-/* Rotación infinita */
-@keyframes rotateInfinite {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-/* Estilo de la imagen */
-.engineImg {
-    width: 100%; /* Asegura que la imagen sea responsiva */
-    max-width: 200px; /* Tamaño máximo para pantallas grandes */
-    animation: rotateInfinite 5s linear infinite;
-}
-
-/* Para pantallas medianas */
-@media (max-width: 768px) {
-    .engineImg {
-        max-width: 150px; /* Reduce el tamaño en pantallas medianas */
-        animation: rotateInfinite 4s linear infinite; /* Acelera un poco la rotación */
-    }
-}
-
-/* Para pantallas pequeñas */
-@media (max-width: 480px) {
-    .engineImg {
-        max-width: 100px; /* Aún más pequeño en pantallas pequeñas */
-        animation: rotateInfinite 3s linear infinite; /* Aumenta la velocidad en móviles */
-    }
-}
-
-            </style>
-<img src="./imgs/engine_remove_bg-removebg-preview.png" alt="Engine image" class="engineImg">
-        </section>
+      
     </section>
 
 
