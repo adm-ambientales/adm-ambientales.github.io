@@ -431,6 +431,49 @@ body {
     filter: brightness(1.1); /* Aumentar el brillo ligeramente */
 }
 
+/* Contenedor de la carretera */
+.road-container {
+    position: relative;
+    width: 100%; /* Ajustar según el contenedor */
+    height: 100px; /* Altura de la carretera */
+    overflow: hidden; /* Oculta cualquier contenido que sobresalga */
+    background-image: url('./imgs/street.jpg'); /* Imagen de fondo */
+    background-size: cover; /* Cubre todo el contenedor */
+    border-radius: 15px; /* Bordes redondeados */
+    margin: 20px auto; /* Centrando el contenedor */
+}
+
+/* Estilo del camioncito (emoji) */
+.truck {
+    position: absolute;
+    font-size: 40px; /* Tamaño del emoji */
+    animation: moveTruck 5s linear infinite; /* Animación de movimiento */
+    top: 20px; /* Ajusta la posición vertical según sea necesario */
+}
+
+/* Animación para mover el camioncito hacia adelante */
+@keyframes moveTruck {
+    0% {
+        right: -60px; /* Comienza fuera del lado derecho */
+    }
+    100% {
+        right: 100%; /* Termina fuera del lado izquierdo */
+    }
+}
+
+/* Líneas amarillas en la carretera */
+.line {
+    position: absolute;
+    width: 10px; /* Ancho de las líneas */
+    height: 60px; /* Aumentar altura para visibilidad */
+    background: yellow; /* Color de las líneas */
+}
+
+/* Distribuir las líneas amarillas en la carretera */
+.line:nth-child(1) { top: 20px; left: 15%; transform: translateX(-50%); }
+.line:nth-child(2) { top: 20px; left: 50%; transform: translateX(-50%); }
+.line:nth-child(3) { top: 20px; left: 85%; transform: translateX(-50%); }
+
         </style>
    <!-- Contenedor del logo -->
    <div class="logo-container relative mx-auto my-12 p-6 rounded-3xl border-gradient shadow-xl backdrop-blur-md">
@@ -444,10 +487,15 @@ body {
         <div class="cv-card">
             <h3>🧘‍♀️ Nuestra Filosofía</h3>
             <p>Nuestra familia está comprometida a fomentar los valores que nos permiten crecer en nuestra política de mejora continua, filosofía que ha llevado a Administradores Ambientales a generar conciencia y responsabilidad en los ámbitos social, laboral y ambiental.</p>
+            <div class="road-container">
+                <div class="truck">🚚</div>
+            </div>
         </div>
         <div class="cv-card">
             <h3>🌟 Visión</h3>
             <p>Convertirnos en una gran solución integral en materia de manejo de residuos para nuestros clientes, respaldado de un servicio a la medida y con proyección de mejora continua, coadyuvando a tener un planeta más próspero.</p>
+           
+            
             <img src="./imgs/vision-img.png" alt="Imagen de la visión" style="max-width: 80%; height: auto; margin: 20px auto; display: block;">
         </div>
         <div class="cv-card">
