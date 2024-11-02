@@ -532,6 +532,7 @@
     gap: 10px;
 }
 
+/* Estilos para la imagen con animaciones */
 .image-box {
     width: 30%; /* Mantén esto para pantallas grandes */
     max-width: 300px;
@@ -542,20 +543,57 @@
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
+/* Animación de ola para la imagen central */
+.image-box:nth-child(2) {
+    animation: wave 5s ease-in-out infinite; /* Para la imagen 2 */
+}
+
+/* Animación de ola para las imágenes 1 y 3 */
+.image-box:nth-child(1),
+.image-box:nth-child(3) {
+    animation: wave-up-down 5s ease-in-out infinite; /* Para imágenes 1 y 3 */
+}
+
+/* Animación para las imágenes 1 y 3 */
+@keyframes wave-up-down {
+    0% {
+        transform: translate(0, 0); /* Posición inicial */
+    }
+    25% {
+        transform: translate(10px, -15px); /* Desplazamiento más notable a la derecha y más hacia arriba */
+    }
+    50% {
+        transform: translate(0, 0); /* Regresar a la posición inicial */
+    }
+    75% {
+        transform: translate(-10px, 15px); /* Desplazamiento más notable a la izquierda y más hacia abajo */
+    }
+    100% {
+        transform: translate(0, 0); /* Regresar a la posición inicial */
+    }
+}
+
+/* Animación de ola para la imagen central */
+@keyframes wave {
+    0% {
+        transform: translate(0, 0); /* Posición inicial */
+    }
+    25% {
+        transform: translate(10px, -15px); /* Desplazamiento a la derecha y arriba */
+    }
+    50% {
+        transform: translate(0, 0); /* Regresar a la posición inicial */
+    }
+    75% {
+        transform: translate(-15px, 10px); /* Desplazamiento a la izquierda y abajo */
+    }
+    100% {
+        transform: translate(0, 0); /* Regresar a la posición inicial */
+    }
+}
+
 /* Responsividad */
 @media (max-width: 768px) {
-    .additional-images {
-        padding: 20px;
-    }
-
-    .additional-images h2 {
-        font-size: 1.8em;
-    }
-
-    .additional-images p {
-        font-size: 1em;
-    }
-
     .image-box {
         width: 100%; /* Ocupa el 100% en móviles */
         max-width: none; /* Elimina el límite de ancho máximo */
@@ -568,13 +606,6 @@
     }
 }
 
-
-        .image-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
 
         /* Estilos para CTA */
         .cta {
