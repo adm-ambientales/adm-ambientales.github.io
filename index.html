@@ -960,22 +960,76 @@ li::before {
     }
 }
 
+/* Estilos generales para la sección */
+.center-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f8ff;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Estilos para el botón */
+.eco-button {
+    display: flex; /* Flex para alinear imagen y texto */
+    align-items: center; /* Centra verticalmente imagen y texto */
+    padding: 15px 30px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
 /* Estilo para la miniatura */
 .eco-button .icon {
-    width: 50px; /* Tamaño de la miniatura */
+    width: 50px;
     height: 40px;
-    margin-right: 10px; /* Espacio entre la imagen y el texto */
-    vertical-align: middle; /* Alinea la imagen con el texto */
-    border-radius: 4px; /* Bordes ligeramente redondeados */
+    margin-right: 10px;
+    vertical-align: middle;
+    border-radius: 4px;
+    flex-shrink: 0; /* Evita que la imagen se reduzca en dispositivos pequeños */
 }
+
+/* Efecto hover para el botón */
+.eco-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Efecto de foco para accesibilidad */
+.eco-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.5);
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    .eco-button {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+    .eco-button .icon {
+        width: 20px; /* Reduce tamaño de la imagen en pantallas pequeñas */
+        height: 20px;
+    }
+}
+
 
     </style>
 <section class="center-section">
     <a href="./services/ventajas.html" target="_blank" class="eco-button">
-        <img src="./imgs/loading_img.jpeg" alt="Icono" class="icon"> <!-- Ruta de la imagen -->
+        <img src="./imgs/loading_img.jpeg" alt="Icono" class="icon"> <!-- Asegúrate de que esta ruta es correcta -->
         Ventajas y detalles de los servicios
     </a>
 </section>
+
 
 </section>
 
