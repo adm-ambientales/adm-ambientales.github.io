@@ -759,204 +759,125 @@ li::before {
 
     <style>
         .card {
-      width: 400px;
-      height: 300px;
-      background: #243137;
-      position: relative;
-      display: grid;
-      place-content: center;
-      border-radius: 10px;
-      overflow: hidden;
-      transition: all 0.5s ease-in-out;
-    }
-
-    .card.hover {
-    border-radius: 0;
-    transform: scale(1.1);
-}
-
-.card.hover .logo {
-    width: 150px;
-    animation: opacity 1s ease-in-out;
-}
-
-.card.hover .border {
-    inset: 15px;
-    opacity: 1;
-    transform: rotate(0);
-}
-
-.card.hover .bottom-text {
-    letter-spacing: 3px;
-    opacity: 1;
-    transform: translateX(-50%);
-}
-
-.card.hover .content .logo-bottom-text {
-    opacity: 1;
-    letter-spacing: 9.5px;
-}
-
-.card.hover .trail {
-    animation: trail 1s ease-in-out;
-}
-
+            width: 400px;
+            height: 400px;
+            background: #243137;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.5s ease-in-out;
+            margin: 0 auto;
+        }
     
-    #logo-main, #logo-second {
-      height: 1000%;
-    }
+        .card.hover {
+            border-radius: 0;
+            transform: scale(1.1);
+        }
     
-    #logo-main {
-      fill: #bd9f67;
-    }
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.5s ease-in-out;
+            text-align: center;
+        }
     
-    #logo-second {
-      padding-bottom: 100px;
-      fill: none;
-      stroke: #bd9f67;
-      stroke-width: 1px;
-    }
+        /* Ajuste de tamaño y efecto de resplandor */
+        .logo img {
+            width: 180px; /* Ajusta el tamaño aquí */
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)); /* Efecto de resplandor blanco */
+            transition: all 0.5s ease-in-out;
+        }
     
-    .border {
-      position: absolute;
-      inset: 0px;
-      border: 2px solid #bd9f67;
-      opacity: 0;
-      transform: rotate(10deg);
-      transition: all 0.5s ease-in-out;
-    }
+        .card.hover .logo img {
+            animation: fadeIn 1s ease-in-out forwards;
+        }
     
-    .bottom-text {
-      position: absolute;
-      left: 50%;
-      bottom: 13px;
-      transform: translateX(-50%);
-      font-size: 20px;
-      text-transform: uppercase;
-      padding: 0px 5px 0px 8px;
-      color: #bd9f67;
-      background: #243137;
-      opacity: 0;
-      letter-spacing: 5px;
-      transition: all 0.5s ease-in-out;
-    }
+        .border {
+            position: absolute;
+            inset: 0px;
+            border: 2px solid #bd9f67;
+            opacity: 0;
+            transform: rotate(10deg);
+            transition: all 0.5s ease-in-out;
+        }
     
-    .content {
-      transition: all 0.5s ease-in-out;
-    }
+        .card.hover .border {
+            inset: 15px;
+            opacity: 1;
+            transform: rotate(0);
+        }
     
-    .content .logo {
-      height: 60px;
-      position: relative;
-      width: 60px;
-      overflow: hidden;
-      transition: all 1s ease-in-out;
-    }
+        .text-center {
+            color: #bd9f67;
+            font-size: 25px;
+            line-height: 1.2;
+            opacity: 0;
+            letter-spacing: 3px;
+            transition: all 0.5s ease-in-out;
+        }
     
-    .content .logo .logo1 {
-      height: 33px;
-      position: absolute;
-      left: 0;
-    }
+        .card.hover .text-center {
+            opacity: 1;
+        }
     
-    .content .logo .logo2 {
-      height: 33px;
-      position: absolute;
-      left: 33px;
-    }
+        .bottom-text {
+            position: absolute;
+            left: 50%;
+            bottom: 13px;
+            transform: translateX(-50%);
+            font-size: 20px;
+            text-transform: uppercase;
+            padding: 0px 8px;
+            color: #bd9f67;
+            background: #243137;
+            opacity: 0;
+            letter-spacing: 5px;
+            transition: all 0.5s ease-in-out;
+        }
     
-    .content .logo .trail {
-      position: absolute;
-      right: 0;
-      height: 100%;
-      width: 100%;
-      opacity: 0;
-    }
+        .card.hover .bottom-text {
+            opacity: 1;
+            letter-spacing: 3px;
+        }
     
-    .content .logo-bottom-text {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      margin-top: 30px;
-      color: #bd9f67;
-      padding-left: 8px;
-      font-size: 11px;
-      opacity: 0;
-      letter-spacing: none;
-      transition: all 0.5s ease-in-out 0.5s;
-    }
+        .trail {
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, rgba(189, 159, 103, 0) 90%, rgb(189, 159, 103) 100%);
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
     
-    .card:hover {
-      border-radius: 0;
-      transform: scale(1.1);
-    }
+        .card.hover .trail {
+            opacity: 1;
+        }
     
-    .card:hover .logo {
-      width: 134px;
-      animation: opacity 1s ease-in-out;
-    }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     
-    .card:hover .border {
-      inset: 15px;
-      opacity: 1;
-      transform: rotate(0);
-    }
-    
-    .card:hover .bottom-text {
-      letter-spacing: 3px;
-      opacity: 1;
-      transform: translateX(-50%);
-    }
-    
-    .card:hover .content .logo-bottom-text {
-      opacity: 1;
-      letter-spacing: 9.5px;
-    }
-    
-    .card:hover .trail {
-      animation: trail 1s ease-in-out;
-    }
-    
-    @keyframes opacity {
-      0% {
-        border-right: 1px solid transparent;
-      }
-    
-      10% {
-        border-right: 1px solid #bd9f67;
-      }
-    
-      80% {
-        border-right: 1px solid #bd9f67;
-      }
-    
-      100% {
-        border-right: 1px solid transparent;
-      }
-    }
-    
-    @keyframes trail {
-      0% {
-        background: linear-gradient(90deg, rgba(189, 159, 103, 0) 90%, rgb(189, 159, 103) 100%);
-        opacity: 0;
-      }
-    
-      30% {
-        background: linear-gradient(90deg, rgba(189, 159, 103, 0) 70%, rgb(189, 159, 103) 100%);
-        opacity: 1;
-      }
-    
-      70% {
-        background: linear-gradient(90deg, rgba(189, 159, 103, 0) 70%, rgb(189, 159, 103) 100%);
-        opacity: 1;
-      }
-    
-      95% {
-        background: linear-gradient(90deg, rgba(189, 159, 103, 0) 90%, rgb(189, 159, 103) 100%);
-        opacity: 0;
-      }
-    }
+        @media (max-width: 500px) {
+            .card {
+                width: 300px;
+                height: 300px;
+            }
+            .bottom-text {
+                font-size: 18px;
+            }
+            .text-center {
+                font-size: 20px;
+            }
+            .logo img {
+                width: 140px; /* Ajuste del tamaño de la imagen en pantallas pequeñas */
+            }
+        }
     </style>
     
     <script>
@@ -974,24 +895,21 @@ li::before {
         });
     </script>
     
-
     <div class="card" id="myCard">
         <div class="border"></div>
         <div class="content">
-          <div class="logo">
-            <div class="logo1">
-                <img src="./imgs/txt.png" alt="Imagen A-A" style="max-width: 100%; height: auto; object-fit: contain;">
-
+            <div class="logo">
+                <img src="./imgs/adm_logo-removebg-preview.png" alt="Imagen A-A">
+                <span class="trail"></span>
+                <div class="text-center">
+                    <span>Administradores</span><br>
+                    <span>Ambientales</span>
+                </div>
             </div>
-        
-            <span class="trail"></span>
-          </div>
-          <br></br>
-          <span class="logo-bottom-text">Administradores Ambientales</span>
         </div>
         <span class="bottom-text">Destrucciones Fiscales</span>
-        
-      </div>
+    </div>
+    
      
  
 </section>
