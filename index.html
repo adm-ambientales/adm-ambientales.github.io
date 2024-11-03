@@ -965,10 +965,28 @@ li::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f8ff;
+    background-color: #b0faa6;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    border: 4px solid #4caf50; /* Color inicial del borde */
+    animation: glowing 2s infinite; /* Añade la animación */
+}
+
+/* Definición de la animación glowing */
+@keyframes glowing {
+    0% {
+        border-color: #4caf50; /* Color inicial */
+        box-shadow: 0 0 5px #4caf50, 0 0 10px #4caf50;
+    }
+    50% {
+        border-color: #00e676; /* Color intermedio más brillante */
+        box-shadow: 0 0 10px #00e676, 0 0 20px #00e676, 0 0 30px #00e676;
+    }
+    100% {
+        border-color: #4caf50; /* Color final vuelve al inicial */
+        box-shadow: 0 0 5px #4caf50, 0 0 10px #4caf50;
+    }
 }
 
 /* Estilos para el botón */
