@@ -967,26 +967,55 @@ li::before {
     align-items: center;
     background-color: #b0faa6;
     padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    border: 4px solid #4caf50; /* Color inicial del borde */
-    animation: glowing 2s infinite; /* Añade la animación */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra más suave */
+    border-radius: 12px; /* Bordes más redondeados */
+    border: 4px solid #4caf50;
+    animation: glowing 2s infinite;
+    transition: transform 0.3s, box-shadow 0.3s; /* Añadir transición para efectos de hover */
 }
 
-/* Definición de la animación glowing */
+/* Imagen que se ajusta al mismo tamaño en todos los dispositivos */
+.center-section img {
+    width: 100px; /* Tamaño fijo para la imagen */
+    height: auto; /* Mantiene la proporción */
+    max-width: 100px; /* Limita el tamaño máximo */
+    border-radius: 12px; /* Bordes redondeados en la imagen */
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .center-section img {
+        width: 80px; /* Ajusta el tamaño para pantallas medianas */
+    }
+}
+
+@media (max-width: 480px) {
+    .center-section img {
+        width: 70px; /* Ajusta el tamaño para pantallas pequeñas */
+    }
+}
+
+/* Animación de borde con efecto de brillo */
 @keyframes glowing {
     0% {
-        border-color: #4caf50; /* Color inicial */
+        border-color: #4caf50;
         box-shadow: 0 0 5px #4caf50, 0 0 10px #4caf50;
     }
     50% {
-        border-color: #00e676; /* Color intermedio más brillante */
+        border-color: #00e676;
         box-shadow: 0 0 10px #00e676, 0 0 20px #00e676, 0 0 30px #00e676;
     }
     100% {
-        border-color: #4caf50; /* Color final vuelve al inicial */
+        border-color: #4caf50;
         box-shadow: 0 0 5px #4caf50, 0 0 10px #4caf50;
     }
+}
+
+/* Efecto al pasar el mouse */
+.center-section:hover {
+    transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Aumenta la sombra al hacer hover */
+    border-color: #00e676; /* Cambia el color del borde al hacer hover */
 }
 
 /* Estilos para el botón */
