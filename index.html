@@ -586,15 +586,18 @@ ul {
 
 /* Button styles */
 .eco-button {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
+    display: flex; /* Flex para alinear imagen y texto */
+    align-items: center; /* Centra verticalmente imagen y texto */
+    padding: 15px 30px;
+    background-color: #28a745;
     color: white;
-    background-color: #4CAF50; /* Color del botón */
-    border-radius: 5px;
     text-decoration: none;
+    border: none;
+    border-radius: 25px;
+    font-size: 20px; /* Aumenta el tamaño de la fuente */
     font-weight: bold;
-    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .eco-button:hover {
@@ -956,7 +959,7 @@ li::before {
 @media (max-width: 600px) {
     .eco-button {
         padding: 12px 24px; /* Reduce el espaciado en pantallas más pequeñas */
-        font-size: 14px; /* Reduce el tamaño de la fuente en pantallas más pequeñas */
+        font-size: 20px !important; /* Reduce el tamaño de la fuente en pantallas más pequeñas */
     }
 }
 
@@ -1036,8 +1039,8 @@ li::before {
 
 /* Estilo para la miniatura */
 .eco-button .icon {
-    width: 50px;
-    height: 40px;
+    width: 70px;
+    height: 60px;
     margin-right: 10px;
     vertical-align: middle;
     border-radius: 4px;
@@ -1063,19 +1066,20 @@ li::before {
         font-size: 14px;
     }
     .eco-button .icon {
-        width: 20px; /* Reduce tamaño de la imagen en pantallas pequeñas */
-        height: 20px;
+        width: 60px; /* Reduce tamaño de la imagen en pantallas pequeñas */
+        height: 50px;
     }
 }
 
 
     </style>
 <section class="center-section">
-    <a href="./services/ventajas.html" target="_blank" class="eco-button">
+    <a href="./services/ventajas.html" target="_blank" class="eco-button" style="font-size: 25px;">
         <img src="./imgs/loading_img.jpeg" alt="Icono" class="icon"> <!-- Asegúrate de que esta ruta es correcta -->
         Ventajas y detalles de los servicios
     </a>
 </section>
+
 
 
 </section>
